@@ -1,281 +1,555 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
-    <link
-      rel="stylesheet"
-      as="style"
-      onload="this.rel='stylesheet'"
-      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Plus+Jakarta+Sans%3Awght%40400%3B500%3B700%3B800"
+    <meta charset="UTF-8" />
+    <title>Stitch Design - HabitPet</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?display=swap&family=Noto+Sans:wght@400;500;700;900&family=Plus+Jakarta+Sans:wght@400;500;700;800"
     />
-
-    <title>Stitch Design</title>
-    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
-
+    <!-- Tailwind CSS CDN with plugins -->
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <style>
+      body {
+        font-family: 'Plus Jakarta Sans', 'Noto Sans', sans-serif;
+      }
+    </style>
   </head>
-  <body>
-    <div class="relative flex size-full min-h-screen flex-col bg-white group/design-root overflow-x-hidden" style='font-family: "Plus Jakarta Sans", "Noto Sans", sans-serif;'>
-      <div class="layout-container flex h-full grow flex-col">
-        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#f4f0f2] px-10 py-3">
-          <div class="flex items-center gap-4 text-[#181113]">
-            <div class="size-4">
+  <body class="min-h-screen bg-white flex flex-col overflow-x-hidden">
+    <div class="relative flex flex-col min-h-screen bg-white group/design-root">
+      <div class="flex flex-col grow h-full">
+
+        <!-- Header -->
+        <header class="flex items-center justify-between border-b border-[#f4f0f2] px-4 md:px-10 py-3">
+          <div class="flex items-center gap-3 text-[#181113]">
+            <div class="w-6 h-6 md:w-8 md:h-8">
+              <!-- Logo SVG -->
               <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- ...Same SVG as before... -->
                 <g clip-path="url(#clip0_6_543)">
                   <path
                     d="M42.1739 20.1739L27.8261 5.82609C29.1366 7.13663 28.3989 10.1876 26.2002 13.7654C24.8538 15.9564 22.9595 18.3449 20.6522 20.6522C18.3449 22.9595 15.9564 24.8538 13.7654 26.2002C10.1876 28.3989 7.13663 29.1366 5.82609 27.8261L20.1739 42.1739C21.4845 43.4845 24.5355 42.7467 28.1133 40.548C30.3042 39.2016 32.6927 37.3073 35 35C37.3073 32.6927 39.2016 30.3042 40.548 28.1133C42.7467 24.5355 43.4845 21.4845 42.1739 20.1739Z"
-                    fill="currentColor"
-                  ></path>
+                    fill="currentColor"></path>
                   <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
+                    fill-rule="evenodd" clip-rule="evenodd"
                     d="M7.24189 26.4066C7.31369 26.4411 7.64204 26.5637 8.52504 26.3738C9.59462 26.1438 11.0343 25.5311 12.7183 24.4963C14.7583 23.2426 17.0256 21.4503 19.238 19.238C21.4503 17.0256 23.2426 14.7583 24.4963 12.7183C25.5311 11.0343 26.1438 9.59463 26.3738 8.52504C26.5637 7.64204 26.4411 7.31369 26.4066 7.24189C26.345 7.21246 26.143 7.14535 25.6664 7.1918C24.9745 7.25925 23.9954 7.5498 22.7699 8.14278C20.3369 9.32007 17.3369 11.4915 14.4142 14.4142C11.4915 17.3369 9.32007 20.3369 8.14278 22.7699C7.5498 23.9954 7.25925 24.9745 7.1918 25.6664C7.14534 26.143 7.21246 26.345 7.24189 26.4066ZM29.9001 10.7285C29.4519 12.0322 28.7617 13.4172 27.9042 14.8126C26.465 17.1544 24.4686 19.6641 22.0664 22.0664C19.6641 24.4686 17.1544 26.465 14.8126 27.9042C13.4172 28.7617 12.0322 29.4519 10.7285 29.9001L21.5754 40.747C21.6001 40.7606 21.8995 40.931 22.8729 40.7217C23.9424 40.4916 25.3821 39.879 27.0661 38.8441C29.1062 37.5904 31.3734 35.7982 33.5858 33.5858C35.7982 31.3734 37.5904 29.1062 38.8441 27.0661C39.879 25.3821 40.4916 23.9425 40.7216 22.8729C40.931 21.8995 40.7606 21.6001 40.747 21.5754L29.9001 10.7285ZM29.2403 4.41187L43.5881 18.7597C44.9757 20.1473 44.9743 22.1235 44.6322 23.7139C44.2714 25.3919 43.4158 27.2666 42.252 29.1604C40.8128 31.5022 38.8165 34.012 36.4142 36.4142C34.012 38.8165 31.5022 40.8128 29.1604 42.252C27.2666 43.4158 25.3919 44.2714 23.7139 44.6322C22.1235 44.9743 20.1473 44.9757 18.7597 43.5881L4.41187 29.2403C3.29027 28.1187 3.08209 26.5973 3.21067 25.2783C3.34099 23.9415 3.8369 22.4852 4.54214 21.0277C5.96129 18.0948 8.43335 14.7382 11.5858 11.5858C14.7382 8.43335 18.0948 5.9613 21.0277 4.54214C22.4852 3.8369 23.9415 3.34099 25.2783 3.21067C26.5973 3.08209 28.1187 3.29028 29.2403 4.41187Z"
-                    fill="currentColor"
-                  ></path>
+                    fill="currentColor"></path>
                 </g>
                 <defs>
-                  <clipPath id="clip0_6_543"><rect width="48" height="48" fill="white"></rect></clipPath>
+                  <clipPath id="clip0_6_543"><rect width="48" height="48" fill="white"/></clipPath>
                 </defs>
               </svg>
             </div>
-            <h2 class="text-[#181113] text-lg font-bold leading-tight tracking-[-0.015em]">HabitPet</h2>
+            <h2 class="text-lg md:text-xl font-bold leading-tight tracking-tight">HabitPet</h2>
           </div>
-          <div class="flex flex-1 justify-end gap-8">
-            <div class="flex items-center gap-9">
-              <a class="text-[#181113] text-sm font-medium leading-normal" href="#">My Pet</a>
-              <a class="text-[#181113] text-sm font-medium leading-normal" href="#">Habits</a>
-              <a class="text-[#181113] text-sm font-medium leading-normal" href="#">Shop</a>
-              <a class="text-[#181113] text-sm font-medium leading-normal" href="#">Community</a>
-            </div>
-            <button
-              class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 bg-[#f4f0f2] text-[#181113] gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5"
-            >
-              <div class="text-[#181113]" data-icon="Bell" data-size="20px" data-weight="regular">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
-                  <path
-                    d="M221.8,175.94C216.25,166.38,208,139.33,208,104a80,80,0,1,0-160,0c0,35.34-8.26,62.38-13.81,71.94A16,16,0,0,0,48,200H88.81a40,40,0,0,0,78.38,0H208a16,16,0,0,0,13.8-24.06ZM128,216a24,24,0,0,1-22.62-16h45.24A24,24,0,0,1,128,216ZM48,184c7.7-13.24,16-43.92,16-80a64,64,0,1,1,128,0c0,36.05,8.28,66.73,16,80Z"
-                  ></path>
-                </svg>
-              </div>
+          <div class="flex flex-1 justify-end gap-2 md:gap-8">
+            <nav class="hidden md:flex items-center gap-6">
+              <a class="text-[#181113] text-sm font-medium" href="#">My Pet</a>
+              <a class="text-[#181113] text-sm font-medium" href="#">Habits</a>
+              <a class="text-[#181113] text-sm font-medium" href="#">Shop</a>
+              <a class="text-[#181113] text-sm font-medium" href="#">Community</a>
+            </nav>
+            <button class="flex items-center h-10 bg-[#f4f0f2] text-[#181113] rounded-full px-3 text-sm font-bold">
+              <!-- Bell Icon -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256">
+                <path d="M221.8,175.94C216.25,166.38,208,139.33,208,104a80,80,0,1,0-160,0c0,35.34-8.26,62.38-13.81,71.94A16,16,0,0,0,48,200H88.81a40,40,0,0,0,78.38,0H208a16,16,0,0,0,13.8-24.06ZM128,216a24,24,0,0,1-22.62-16h45.24A24,24,0,0,1,128,216ZM48,184c7.7-13.24,16-43.92,16-80a64,64,0,1,1,128,0c0,36.05,8.28,66.73,16,80Z"></path>
+              </svg>
             </button>
-            <div
-              class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
-              style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB95abUUFLyJAs1lG5TjyN7t5Ed7zl2FpwAYzKQDwaYMJ7hscx2-c24b_GSXkIK1TOKMIcStWCnOnnvQeWNky5ahpaMuzQUK-BKUE31F2MrqATWQgeUggG8TFJ0dpY7k3ZJw-jU72-J-SSlgefNcT6p94irG4tpilHcOEvaUKUOhzeMjBGhKhVyFcBO2bM46agSHld_aw7DSNvYKPVEIbAXBVXzwaw44ooH-4Ma9jtje-3Y6srtV9iApp8-BofyM5RzQf2fnpUGJIw");'
+            <div class="bg-center bg-cover rounded-full w-10 h-10 ml-1"
+              style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB95abUUFLyJAs1lG5TjyN7t5Ed7zl2FpwAYzKQDwaYMJ7hscx2-c24b_GSXkIK1TOKMIcStWCnOnnvQeWNky5ahpaMuzQUK-BKUE31F2MrqATWQgeUggG8TFJ0dpY7k3ZJw-jU72-J-SSlgefNcT6p94irG4tpilHcOEvaUKUOhzeMjBGhKhVyFcBO2bM46agSHld_aw7DSNvYKPVEIbAXBVXzwaw44ooH-4Ma9jtje-3Y6srtV9iApp8-BofyM5RzQf2fnpUGJIw');"
             ></div>
           </div>
         </header>
-        <div class="px-40 flex flex-1 justify-center py-5">
-          <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
-            <div class="flex flex-wrap justify-between gap-3 p-4"><p class="text-[#181113] tracking-light text-[32px] font-bold leading-tight min-w-72">Pet Gallery</p></div>
-            <h3 class="text-[#181113] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">Featured Pets</h3>
-            <div class="flex overflow-y-auto [-ms-scrollbar-style:none] [scrollbar-width:none] [&amp;::-webkit-scrollbar]:hidden">
-              <div class="flex items-stretch p-4 gap-3">
-                <div class="flex h-full flex-1 flex-col gap-4 rounded-lg min-w-40">
-                  <div
-                    class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl flex flex-col"
-                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCtytMC69sohr9bUZpco75DKpltc5Qxs92s3T2yESR_ZX-MlgSklMKv82FEYKjyHEJ1h75gIc0C6BSUL-5MkA6sgqBmUGF1wAhDODLisygGoJq8TKTFz7g6gzoSfiv1Z_P1t44wPyWaHqXxuiJrd-3eQW8nyXCfFmW8wA3i6KHpq6Gwpv2nNDzVen5Xsie3tVRl90jkAdExBFVf9Y4pZg0hI6zMrspD2BcLUmAhgSCSwXNLRYFZfG31GXFQ7keEPMbw0qlmb0jJImc");'
-                  ></div>
+
+        <!-- Main content container -->
+        <main class="flex-1 w-full px-2 sm:px-6 md:px-10 lg:px-32 xl:px-44 py-5 flex flex-col items-center">
+          <div class="w-full max-w-full sm:max-w-[600px] md:max-w-[860px] lg:max-w-[960px] flex flex-col gap-6">
+
+            <!-- Pet Gallery -->
+            <div>
+              <div class="flex flex-wrap justify-between gap-3 p-2 sm:p-4">
+                <p class="text-[#181113] text-2xl sm:text-3xl font-bold leading-tight min-w-44">Pet Gallery</p>
+              </div>
+              <h3 class="text-[#181113] text-base sm:text-lg font-bold tracking-tight px-2 sm:px-4 pb-2 pt-2">Featured Pets</h3>
+              <!-- Gallery: scroll on xs, wrap on md+ -->
+              <div class="flex flex-nowrap gap-3 p-2 sm:p-4 overflow-x-auto md:overflow-x-visible">
+                <!-- Pet Card -->
+                <div class="flex flex-col gap-2 w-40 min-w-36 max-w-xs flex-shrink-0">
+                  <div class="w-full aspect-square bg-center bg-cover rounded-xl"
+                    style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCtytMC69sohr9bUZpco75DKpltc5Qxs92s3T2yESR_ZX-MlgSklMKv82FEYKjyHEJ1h75gIc0C6BSUL-5MkA6sgqBmUGF1wAhDODLisygGoJq8TKTFz7g6gzoSfiv1Z_P1t44wPyWaHqXxuiJrd-3eQW8nyXCfFmW8wA3i6KHpq6Gwpv2nNDzVen5Xsie3tVRl90jkAdExBFVf9Y4pZg0hI6zMrspD2BcLUmAhgSCSwXNLRYFZfG31GXFQ7keEPMbw0qlmb0jJImc');">
+                  </div>
                   <div>
-                    <p class="text-[#181113] text-base font-medium leading-normal">Whiskers</p>
-                    <p class="text-[#88636f] text-sm font-normal leading-normal">Owner: Sarah</p>
+                    <p class="text-[#181113] text-base font-medium">Whiskers</p>
+                    <p class="text-[#88636f] text-sm">Owner: Sarah</p>
                   </div>
                 </div>
-                <div class="flex h-full flex-1 flex-col gap-4 rounded-lg min-w-40">
-                  <div
-                    class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl flex flex-col"
-                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCfyOU-h2BUhNxpi1wkKha5Y9o5htbXIPbSih7BYDjIWPFwj2g4pJ4r571ma_Yk5I7b76Nm3mTVgkrlCSO7cPvD-dd8T_VVfDdA5UrLWhsZ0ZhcJq9GG-EZU7NPcbb8PBaSysCximzmzYSiSZJWeInewhi8DIjKHRl_nL5xDWMBtzt6zi_2uXYss6oqVm3O4PsO6Guqg1t4Wh42HLSBGZ6IFXpDsQ7_cnIBXjeM47XSbPMd7SI0-4-IUdeGN36fLc3UIbTg8XN2IPY");'
-                  ></div>
+                <div class="flex flex-col gap-2 w-40 min-w-36 max-w-xs flex-shrink-0">
+                  <div class="w-full aspect-square bg-center bg-cover rounded-xl"
+                    style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCfyOU-h2BUhNxpi1wkKha5Y9o5htbXIPbSih7BYDjIWPFwj2g4pJ4r571ma_Yk5I7b76Nm3mTVgkrlCSO7cPvD-dd8T_VVfDdA5UrLWhsZ0ZhcJq9GG-EZU7NPcbb8PBaSysCximzmzYSiSZJWeInewhi8DIjKHRl_nL5xDWMBtzt6zi_2uXYss6oqVm3O4PsO6Guqg1t4Wh42HLSBGZ6IFXpDsQ7_cnIBXjeM47XSbPMd7SI0-4-IUdeGN36fLc3UIbTg8XN2IPY');">
+                  </div>
                   <div>
-                    <p class="text-[#181113] text-base font-medium leading-normal">Buddy</p>
-                    <p class="text-[#88636f] text-sm font-normal leading-normal">Owner: Mike</p>
+                    <p class="text-[#181113] text-base font-medium">Buddy</p>
+                    <p class="text-[#88636f] text-sm">Owner: Mike</p>
                   </div>
                 </div>
-                <div class="flex h-full flex-1 flex-col gap-4 rounded-lg min-w-40">
-                  <div
-                    class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl flex flex-col"
-                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDrx_dl_SCdgdxZNA5A1NMwSA_uMp7GMVrODmW5UOhJSEhQs_orODicXAbx1GgLeBgil7jSsQbEow7zMTe6HqSjz81QJLtBz-KTdKQjd60kZ6AZxbn_E0dXtl6bOp48mgjw4xqgEBBp2sCE4HSvu_FEhe9aM4M_KGaAyucXwbg-7eyACFHa61SwSrZUfF1ph9BWW15Q0a2cg3FlDzt64Kc6KH5VS78ETq0HJhldArnoxleBFQ_iJ57XLPfk6ql8_M3wtz0nabwbiBo");'
-                  ></div>
+                <div class="flex flex-col gap-2 w-40 min-w-36 max-w-xs flex-shrink-0">
+                  <div class="w-full aspect-square bg-center bg-cover rounded-xl"
+                    style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDrx_dl_SCdgdxZNA5A1NMwSA_uMp7GMVrODmW5UOhJSEhQs_orODicXAbx1GgLeBgil7jSsQbEow7zMTe6HqSjz81QJLtBz-KTdKQjd60kZ6AZxbn_E0dXtl6bOp48mgjw4xqgEBBp2sCE4HSvu_FEhe9aM4M_KGaAyucXwbg-7eyACFHa61SwSrZUfF1ph9BWW15Q0a2cg3FlDzt64Kc6KH5VS78ETq0HJhldArnoxleBFQ_iJ57XLPfk6ql8_M3wtz0nabwbiBo');">
+                  </div>
                   <div>
-                    <p class="text-[#181113] text-base font-medium leading-normal">Cotton</p>
-                    <p class="text-[#88636f] text-sm font-normal leading-normal">Owner: Emily</p>
+                    <p class="text-[#181113] text-base font-medium">Cotton</p>
+                    <p class="text-[#88636f] text-sm">Owner: Emily</p>
                   </div>
                 </div>
               </div>
             </div>
-            <h3 class="text-[#181113] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">Leaderboard</h3>
-            <div class="px-4 py-3 @container">
-              <div class="flex overflow-hidden rounded-xl border border-[#e5dcdf] bg-white">
-                <table class="flex-1">
+
+            <!-- Leaderboard -->
+            <div>
+              <h3 class="text-[#181113] text-base sm:text-lg font-bold tracking-tight px-2 sm:px-4 pb-2 pt-2">Leaderboard</h3>
+              <div class="overflow-x-auto w-full px-2 sm:px-4 py-3">
+                <table class="min-w-full bg-white border rounded-xl">
                   <thead>
-                    <tr class="bg-white">
-                      <th class="table-4e6caaa2-853c-4c43-9cc4-8ae90f8b5aa8-column-120 px-4 py-3 text-left text-[#181113] w-[400px] text-sm font-medium leading-normal">Rank</th>
-                      <th class="table-4e6caaa2-853c-4c43-9cc4-8ae90f8b5aa8-column-240 px-4 py-3 text-left text-[#181113] w-[400px] text-sm font-medium leading-normal">User</th>
-                      <th class="table-4e6caaa2-853c-4c43-9cc4-8ae90f8b5aa8-column-360 px-4 py-3 text-left text-[#181113] w-[400px] text-sm font-medium leading-normal">Streak</th>
-                      <th class="table-4e6caaa2-853c-4c43-9cc4-8ae90f8b5aa8-column-480 px-4 py-3 text-left text-[#181113] w-[400px] text-sm font-medium leading-normal">XP</th>
+                    <tr>
+                      <th class="px-4 py-3 text-left text-[#181113] text-sm font-medium">Rank</th>
+                      <th class="px-4 py-3 text-left text-[#181113] text-sm font-medium">User</th>
+                      <th class="px-4 py-3 text-left text-[#181113] text-sm font-medium">Streak</th>
+                      <th class="px-4 py-3 text-left text-[#181113] text-sm font-medium">XP</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr class="border-t border-t-[#e5dcdf]">
-                      <td class="table-4e6caaa2-853c-4c43-9cc4-8ae90f8b5aa8-column-120 h-[72px] px-4 py-2 w-[400px] text-[#88636f] text-sm font-normal leading-normal">1</td>
-                      <td class="table-4e6caaa2-853c-4c43-9cc4-8ae90f8b5aa8-column-240 h-[72px] px-4 py-2 w-[400px] text-[#181113] text-sm font-normal leading-normal">Sophia</td>
-                      <td class="table-4e6caaa2-853c-4c43-9cc4-8ae90f8b5aa8-column-360 h-[72px] px-4 py-2 w-[400px] text-[#88636f] text-sm font-normal leading-normal">15</td>
-                      <td class="table-4e6caaa2-853c-4c43-9cc4-8ae90f8b5aa8-column-480 h-[72px] px-4 py-2 w-[400px] text-[#88636f] text-sm font-normal leading-normal">1500</td>
+                    <tr class="border-t">
+                      <td class="px-4 py-2 text-[#88636f] text-sm">1</td>
+                      <td class="px-4 py-2 text-[#181113] text-sm">Sophia</td>
+                      <td class="px-4 py-2 text-[#88636f] text-sm">15</td>
+                      <td class="px-4 py-2 text-[#88636f] text-sm">1500</td>
                     </tr>
-                    <tr class="border-t border-t-[#e5dcdf]">
-                      <td class="table-4e6caaa2-853c-4c43-9cc4-8ae90f8b5aa8-column-120 h-[72px] px-4 py-2 w-[400px] text-[#88636f] text-sm font-normal leading-normal">2</td>
-                      <td class="table-4e6caaa2-853c-4c43-9cc4-8ae90f8b5aa8-column-240 h-[72px] px-4 py-2 w-[400px] text-[#181113] text-sm font-normal leading-normal">Ethan</td>
-                      <td class="table-4e6caaa2-853c-4c43-9cc4-8ae90f8b5aa8-column-360 h-[72px] px-4 py-2 w-[400px] text-[#88636f] text-sm font-normal leading-normal">12</td>
-                      <td class="table-4e6caaa2-853c-4c43-9cc4-8ae90f8b5aa8-column-480 h-[72px] px-4 py-2 w-[400px] text-[#88636f] text-sm font-normal leading-normal">1200</td>
+                    <tr class="border-t">
+                      <td class="px-4 py-2 text-[#88636f] text-sm">2</td>
+                      <td class="px-4 py-2 text-[#181113] text-sm">Ethan</td>
+                      <td class="px-4 py-2 text-[#88636f] text-sm">12</td>
+                      <td class="px-4 py-2 text-[#88636f] text-sm">1200</td>
                     </tr>
-                    <tr class="border-t border-t-[#e5dcdf]">
-                      <td class="table-4e6caaa2-853c-4c43-9cc4-8ae90f8b5aa8-column-120 h-[72px] px-4 py-2 w-[400px] text-[#88636f] text-sm font-normal leading-normal">3</td>
-                      <td class="table-4e6caaa2-853c-4c43-9cc4-8ae90f8b5aa8-column-240 h-[72px] px-4 py-2 w-[400px] text-[#181113] text-sm font-normal leading-normal">Olivia</td>
-                      <td class="table-4e6caaa2-853c-4c43-9cc4-8ae90f8b5aa8-column-360 h-[72px] px-4 py-2 w-[400px] text-[#88636f] text-sm font-normal leading-normal">10</td>
-                      <td class="table-4e6caaa2-853c-4c43-9cc4-8ae90f8b5aa8-column-480 h-[72px] px-4 py-2 w-[400px] text-[#88636f] text-sm font-normal leading-normal">1000</td>
+                    <tr class="border-t">
+                      <td class="px-4 py-2 text-[#88636f] text-sm">3</td>
+                      <td class="px-4 py-2 text-[#181113] text-sm">Olivia</td>
+                      <td class="px-4 py-2 text-[#88636f] text-sm">10</td>
+                      <td class="px-4 py-2 text-[#88636f] text-sm">1000</td>
                     </tr>
-                    <tr class="border-t border-t-[#e5dcdf]">
-                      <td class="table-4e6caaa2-853c-4c43-9cc4-8ae90f8b5aa8-column-120 h-[72px] px-4 py-2 w-[400px] text-[#88636f] text-sm font-normal leading-normal">4</td>
-                      <td class="table-4e6caaa2-853c-4c43-9cc4-8ae90f8b5aa8-column-240 h-[72px] px-4 py-2 w-[400px] text-[#181113] text-sm font-normal leading-normal">Noah</td>
-                      <td class="table-4e6caaa2-853c-4c43-9cc4-8ae90f8b5aa8-column-360 h-[72px] px-4 py-2 w-[400px] text-[#88636f] text-sm font-normal leading-normal">8</td>
-                      <td class="table-4e6caaa2-853c-4c43-9cc4-8ae90f8b5aa8-column-480 h-[72px] px-4 py-2 w-[400px] text-[#88636f] text-sm font-normal leading-normal">800</td>
+                    <tr class="border-t">
+                      <td class="px-4 py-2 text-[#88636f] text-sm">4</td>
+                      <td class="px-4 py-2 text-[#181113] text-sm">Noah</td>
+                      <td class="px-4 py-2 text-[#88636f] text-sm">8</td>
+                      <td class="px-4 py-2 text-[#88636f] text-sm">800</td>
                     </tr>
-                    <tr class="border-t border-t-[#e5dcdf]">
-                      <td class="table-4e6caaa2-853c-4c43-9cc4-8ae90f8b5aa8-column-120 h-[72px] px-4 py-2 w-[400px] text-[#88636f] text-sm font-normal leading-normal">5</td>
-                      <td class="table-4e6caaa2-853c-4c43-9cc4-8ae90f8b5aa8-column-240 h-[72px] px-4 py-2 w-[400px] text-[#181113] text-sm font-normal leading-normal">Ava</td>
-                      <td class="table-4e6caaa2-853c-4c43-9cc4-8ae90f8b5aa8-column-360 h-[72px] px-4 py-2 w-[400px] text-[#88636f] text-sm font-normal leading-normal">5</td>
-                      <td class="table-4e6caaa2-853c-4c43-9cc4-8ae90f8b5aa8-column-480 h-[72px] px-4 py-2 w-[400px] text-[#88636f] text-sm font-normal leading-normal">500</td>
+                    <tr class="border-t">
+                      <td class="px-4 py-2 text-[#88636f] text-sm">5</td>
+                      <td class="px-4 py-2 text-[#181113] text-sm">Ava</td>
+                      <td class="px-4 py-2 text-[#88636f] text-sm">5</td>
+                      <td class="px-4 py-2 text-[#88636f] text-sm">500</td>
                     </tr>
                   </tbody>
                 </table>
               </div>
-              <style>
-                          @container(max-width:120px){.table-4e6caaa2-853c-4c43-9cc4-8ae90f8b5aa8-column-120{display: none;}}
-                @container(max-width:240px){.table-4e6caaa2-853c-4c43-9cc4-8ae90f8b5aa8-column-240{display: none;}}
-                @container(max-width:360px){.table-4e6caaa2-853c-4c43-9cc4-8ae90f8b5aa8-column-360{display: none;}}
-                @container(max-width:480px){.table-4e6caaa2-853c-4c43-9cc4-8ae90f8b5aa8-column-480{display: none;}}
-              </style>
             </div>
-            <h3 class="text-[#181113] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">Community Posts</h3>
-            <div class="flex items-center px-4 py-3 gap-3 @container">
-              <label class="flex flex-col min-w-40 h-full flex-1">
-                <div class="flex w-full flex-1 items-stretch rounded-xl h-full">
-                  <div class="flex border border-[#e5dcdf] bg-white justify-end pl-[15px] pr-[15px] pt-[15px] rounded-l-xl border-r-0">
-                    <div
-                      class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 shrink-0"
-                      style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCAmZPuwpXF6NuqI-7U8U821HueMlCnJdhfk5HaAH69jBzhssOBvD3RSan3OkIYC76WoXQTBeyKVUB0ObCfRh6dPOs0WdY34UsX1dzk-Ml9hZj2Jqu40CDmOTYm_9sRr1oPQFs0L_Td6JJkwOs5vnqBzo1cqy7wTjAewtoVUCrQJ35h4jnPW6tG5qzRm0PAyj6RjaSS2TZy0la4j5swGrLyMiDsH11MykjSgDAyQhNyS1eE2mG9wvV_DgfGs1X3QQCbCW2n-CFeikg");'
-                    ></div>
-                  </div>
-                  <div class="flex flex-1 flex-col">
-                    <textarea
-                      placeholder="Share your pet's progress!"
-                      class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#181113] focus:outline-0 focus:ring-0 border border-[#e5dcdf] bg-white focus:border-[#e5dcdf] h-auto placeholder:text-[#cebbc1] rounded-l-none border-l-0 pl-2 rounded-b-none border-b-0 text-base font-normal leading-normal pt-[22px]"
-                    ></textarea>
-                    <div class="flex border border-[#e5dcdf] bg-white justify-end pr-[15px] rounded-br-xl border-l-0 border-t-0 px-[15px] pb-[15px]">
-                      <div class="flex items-center gap-4 justify-end">
-                        <div class="flex items-center gap-1">
-                          <button class="flex items-center justify-center p-1.5">
-                            <div class="text-[#88636f]" data-icon="Image" data-size="20px" data-weight="regular">
-                              <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
-                                <path
-                                  d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,16V158.75l-26.07-26.06a16,16,0,0,0-22.63,0l-20,20-44-44a16,16,0,0,0-22.62,0L40,149.37V56ZM40,172l52-52,80,80H40Zm176,28H194.63l-36-36,20-20L216,181.38V200ZM144,100a12,12,0,1,1,12,12A12,12,0,0,1,144,100Z"
-                                ></path>
-                              </svg>
-                            </div>
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </label>
-            </div>
-            <div class="flex w-full flex-row items-start justify-start gap-3 p-4">
-              <div
-                class="bg-center bg-no-repeat aspect-square bg-cover rounded-full w-10 shrink-0"
-                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCFEq0VNHKWbO-D8zFt4sm6m8ntGJCBOzPTmtV6J9IL-bVG4lnnqeGSeaQEsNthdZJudUaWN_MJsv13LqVj1BzhayWPHPHUFdKXm70e4wobPoIPIE2BoEiZX3c3sgf9mu9plcg2ZnFqi0sPvf96EkvGtN5IKP5Z1FTBnxyGXDRFGfj-SHRx8BfewcKRQ3yd8LzdotWsTWiJPt3MmiJDtDhSjDyC-qikG-UPU3VT7QVNfFNvCiVGg49Hr5F3BbBTY51iXMkfwbOriJE");'
-              ></div>
-              <div class="flex h-full flex-1 flex-col items-start justify-start">
-                <div class="flex w-full flex-row items-start justify-start gap-x-3">
-                  <p class="text-[#181113] text-sm font-bold leading-normal tracking-[0.015em]">Liam</p>
-                  <p class="text-[#88636f] text-sm font-normal leading-normal">2d ago</p>
-                </div>
-                <p class="text-[#181113] text-sm font-normal leading-normal">My pet, Sparky, just evolved! So proud!</p>
-                <div class="flex w-full flex-row items-center justify-start gap-9 pt-2">
-                  <div class="flex items-center gap-2">
-                    <div class="text-[#88636f]" data-icon="ThumbsUp" data-size="20px" data-weight="regular">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
-                        <path
-                          d="M234,80.12A24,24,0,0,0,216,72H160V56a40,40,0,0,0-40-40,8,8,0,0,0-7.16,4.42L75.06,96H32a16,16,0,0,0-16,16v88a16,16,0,0,0,16,16H204a24,24,0,0,0,23.82-21l12-96A24,24,0,0,0,234,80.12ZM32,112H72v88H32ZM223.94,97l-12,96a8,8,0,0,1-7.94,7H88V105.89l36.71-73.43A24,24,0,0,1,144,56V80a8,8,0,0,0,8,8h64a8,8,0,0,1,7.94,9Z"
-                        ></path>
-                      </svg>
-                    </div>
-                    <p class="text-[#88636f] text-sm font-normal leading-normal">12</p>
-                  </div>
-                  <div class="flex items-center gap-2">
-                    <div class="text-[#88636f]" data-icon="ThumbsDown" data-size="20px" data-weight="regular">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
-                        <path
-                          d="M239.82,157l-12-96A24,24,0,0,0,204,40H32A16,16,0,0,0,16,56v88a16,16,0,0,0,16,16H75.06l37.78,75.58A8,8,0,0,0,120,240a40,40,0,0,0,40-40V184h56a24,24,0,0,0,23.82-27ZM72,144H32V56H72Zm150,21.29a7.88,7.88,0,0,1-6,2.71H152a8,8,0,0,0-8,8v24a24,24,0,0,1-19.29,23.54L88,150.11V56H204a8,8,0,0,1,7.94,7l12,96A7.87,7.87,0,0,1,222,165.29Z"
-                        ></path>
-                      </svg>
-                    </div>
-                    <p class="text-[#88636f] text-sm font-normal leading-normal">2</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="flex w-full grow bg-white @container p-4">
-              <div class="w-full gap-1 overflow-hidden bg-white @[480px]:gap-2 aspect-[3/2] rounded-xl flex">
-                <div
-                  class="w-full bg-center bg-no-repeat bg-cover aspect-auto rounded-none flex-1"
-                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDGYd8ouhhkNUgoEXxlkwJuUJM5o16gz4dBp1zM_QtP4wMZ9_6yAuIoJizr3vyuCMmAKxYQ1vl0w7AoRxBs-0szxXhC_Z2zpvoudbxiwlstXtwbBlXzZ7Pax-0dZl8EFyxNerWho7nOZ1kx7OH8pfnb1kF81mOwYsnHhKXjMuwOnlmT6XPoA2k-NZo397E79ivVMuTiCrEqIZY1O6_-xECBuP-2j8fuATwG4lifrIMR1rl2qUUV5JB6N0_C0gYjLp44tv5Qs9CYQgs");'
-                ></div>
-              </div>
-            </div>
-            <div class="flex w-full flex-row items-start justify-start gap-3 p-4">
-              <div
-                class="bg-center bg-no-repeat aspect-square bg-cover rounded-full w-10 shrink-0"
-                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAoY8jV5bu1DhELSgkrniVD4Pksy0Ts0YBYVn0UeiVUGxuA_x7RPmC-zZqraGEY9VDBTHVlvyoUA_RlbY3lZMs6quJ74vjA0Ye9IrjaMFrl1MsbdeX4xaxP9Ieco62XbkSjPxS3szexwrrKvwmLnCeqgCJINigft_sp_EDTo5WnzMj-D-Xd6CE_3SxKpDMb1DoefPeUQz-2Ox1osgVbrfBHHZ1n4qacAWMZ8R6dl52d0mluN0TIw3nCH1BeTaonH9mRVFAhVZqAXww");'
-              ></div>
-              <div class="flex h-full flex-1 flex-col items-start justify-start">
-                <div class="flex w-full flex-row items-start justify-start gap-x-3">
-                  <p class="text-[#181113] text-sm font-bold leading-normal tracking-[0.015em]">Chloe</p>
-                  <p class="text-[#88636f] text-sm font-normal leading-normal">3d ago</p>
-                </div>
-                <p class="text-[#181113] text-sm font-normal leading-normal">Just reached a 7-day streak with my pet, Fluffy! Consistency is key!</p>
-                <div class="flex w-full flex-row items-center justify-start gap-9 pt-2">
-                  <div class="flex items-center gap-2">
-                    <div class="text-[#88636f]" data-icon="ThumbsUp" data-size="20px" data-weight="regular">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
-                        <path
-                          d="M234,80.12A24,24,0,0,0,216,72H160V56a40,40,0,0,0-40-40,8,8,0,0,0-7.16,4.42L75.06,96H32a16,16,0,0,0-16,16v88a16,16,0,0,0,16,16H204a24,24,0,0,0,23.82-21l12-96A24,24,0,0,0,234,80.12ZM32,112H72v88H32ZM223.94,97l-12,96a8,8,0,0,1-7.94,7H88V105.89l36.71-73.43A24,24,0,0,1,144,56V80a8,8,0,0,0,8,8h64a8,8,0,0,1,7.94,9Z"
-                        ></path>
-                      </svg>
-                    </div>
-                    <p class="text-[#88636f] text-sm font-normal leading-normal">8</p>
-                  </div>
-                  <div class="flex items-center gap-2">
-                    <div class="text-[#88636f]" data-icon="ThumbsDown" data-size="20px" data-weight="regular">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
-                        <path
-                          d="M239.82,157l-12-96A24,24,0,0,0,204,40H32A16,16,0,0,0,16,56v88a16,16,0,0,0,16,16H75.06l37.78,75.58A8,8,0,0,0,120,240a40,40,0,0,0,40-40V184h56a24,24,0,0,0,23.82-27ZM72,144H32V56H72Zm150,21.29a7.88,7.88,0,0,1-6,2.71H152a8,8,0,0,0-8,8v24a24,24,0,0,1-19.29,23.54L88,150.11V56H204a8,8,0,0,1,7.94,7l12,96A7.87,7.87,0,0,1,222,165.29Z"
-                        ></path>
-                      </svg>
-                    </div>
-                    <p class="text-[#88636f] text-sm font-normal leading-normal">1</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="flex w-full grow bg-white @container p-4">
-              <div class="w-full gap-1 overflow-hidden bg-white @[480px]:gap-2 aspect-[3/2] rounded-xl flex">
-                <div
-                  class="w-full bg-center bg-no-repeat bg-cover aspect-auto rounded-none flex-1"
-                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCz5AGtB43lWja3ZpeiKOO_AQ60iu6yS7LGyNCHSfugPCfPD3ceBhf6NBkwMEptpKJNY-SeYxiXV3IwoS9T5Gjl3u84TEqReZrfXEZBJo44EKnKuTyJyCwFEd8wSDL12Bycj6jy-4mlMfM4OKZkZYFyIS6iV3frpeXOVNDNH_jvtWQgpILbKELsZKOlb_E438mYRQWinv3tBmf5tnfRE05YUEvadVIfEjF8Vdp89bq5SANTmJtLIasB-gj_msR4jVUfW19nJJ5hiow");'
-                ></div>
-              </div>
-            </div>
+            
+
+            <!-- Community Posts -->
+<div>
+  <h3 class="text-[#181113] text-base sm:text-lg font-bold tracking-tight px-2 sm:px-4 pb-2 pt-2">Community Posts</h3>
+  <div class="flex flex-col gap-4">
+    <!-- New Post -->
+    <label class="flex flex-col min-w-40 w-full">
+      <div class="flex rounded-xl border border-[#e5dcdf] overflow-hidden bg-white w-full">
+        <div class="hidden sm:flex border-r border-[#e5dcdf] p-4 items-center justify-center">
+          <div class="bg-center bg-cover rounded-full w-10 h-10"
+            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCAmZPuwpXF6NuqI-7U8U821HueMlCnJdhfk5HaAH69jBzhssOBvD3RSan3OkIYC76WoXQTBeyKVUB0ObCfRh6dPOs0WdY34UsX1dzk-Ml9hZj2Jqu40CDmOTYm_9sRr1oPQFs0L_Td6JJkwOs5vnqBzo1cqy7wTjAewtoVUCrQJ35h4jnPW6tG5qzRm0PAyj6RjaSS2TZy0la4j5swGrLyMiDsH11MykjSgDAyQhNyS1eE2mG9wvV_DgfGs1X3QQCbCW2n-CFeikg');"></div>
+        </div>
+        <div class="flex flex-1 flex-col">
+          <textarea id="caption"
+            placeholder="Share your pet's progress!"
+            class="form-input w-full flex-1 resize-none outline-none border-0 bg-white p-2 text-base rounded-none"
+            rows="2"></textarea>
+          <div class="flex justify-end pr-4 pb-2 gap-3">
+            <!-- Hidden file input -->
+            <input type="file" id="imageUpload" accept="image/*" class="hidden" onchange="previewImage(event)" />
+
+            <!-- Gallery Button -->
+            <button type="button" onclick="document.getElementById('imageUpload').click()">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                fill="currentColor" viewBox="0 0 256 256">
+                <path
+                  d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,16V158.75l-26.07-26.06a16,16,0,0,0-22.63,0l-20,20-44-44a16,16,0,0,0-22.62,0L40,149.37V56ZM40,172l52-52,80,80H40Zm176,28H194.63l-36-36,20-20L216,181.38V200ZM144,100a12,12,0,1,1,12,12A12,12,0,0,1,144,100Z">
+                </path>
+              </svg>
+            </button>
+
+            <!-- Post Button -->
+            <button onclick="createPost()" class="bg-blue-500 text-white px-3 py-1 rounded-lg">Post</button>
           </div>
         </div>
+      </div>
+    </label>
+
+    <!-- Posts Display Section -->
+    <div id="posts" class="mt-4 space-y-4"></div>
+  </div>
+</div>
+
+<script>
+function toggleReaction(el, type) {
+  const likeIcon = el.querySelector(".like-icon");
+  const unlikeIcon = el.querySelector(".unlike-icon");
+  const countEl = el.querySelector(".reaction-count");
+
+  let count = parseInt(countEl.textContent);
+
+  if (type === "like") {
+    if (likeIcon.classList.contains("text-green-500")) {
+      // undo like
+      likeIcon.classList.remove("text-green-500");
+      likeIcon.classList.add("text-[#181113]");
+      countEl.textContent = count - 1;
+    } else {
+      // like
+      likeIcon.classList.add("text-green-500");
+      likeIcon.classList.remove("text-[#181113]");
+      countEl.textContent = count + 1;
+
+      // if unlike active → remove it and decrement
+      if (unlikeIcon.classList.contains("text-red-500")) {
+        unlikeIcon.classList.remove("text-red-500");
+        unlikeIcon.classList.add("text-[#181113]");
+        countEl.textContent = countEl.textContent - 1;
+      }
+    }
+  } 
+  
+  else if (type === "unlike") {
+    if (unlikeIcon.classList.contains("text-red-500")) {
+      // undo unlike
+      unlikeIcon.classList.remove("text-red-500");
+      unlikeIcon.classList.add("text-[#181113]");
+      countEl.textContent = count + 1; // restore
+    } else {
+      // unlike
+      unlikeIcon.classList.add("text-red-500");
+      unlikeIcon.classList.remove("text-[#181113]");
+      countEl.textContent = count - 1;
+
+      // if like active → remove it and decrement
+      if (likeIcon.classList.contains("text-green-500")) {
+        likeIcon.classList.remove("text-green-500");
+        likeIcon.classList.add("text-[#181113]");
+        countEl.textContent = countEl.textContent - 1;
+      }
+    }
+  }
+}
+</script>
+
+
+
+
+                <!-- Single Post -->
+               <div class="flex items-start gap-3 p-2">
+  <!-- Avatar -->
+  <div class="bg-center bg-cover rounded-full w-10 h-10 flex-shrink-0"
+    style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCFEq0VNHKWbO-D8zFt4sm6m8ntGJCBOzPTmtV6J9IL-bVG4lnnqeGSeaQEsNthdZJudUaWN_MJsv13LqVj1BzhayWPHPHUFdKXm70e4wobPoIPIE2BoEiZX3c3sgf9mu9plcg2ZnFqi0sPvf96EkvGtN5IKP5Z1FTBnxyGXDRFGfj-SHRx8BfewcKRQ3yd8LzdotWsTWiJPt3MmiJDtDhSjDyC-qikG-UPU3VT7QVNfFNvCiVGg49Hr5F3BbBTY51iXMkfwbOriJE');">
+  </div>
+
+  <!-- Post Content -->
+  <div class="flex flex-col flex-1">
+    <div class="flex gap-3">
+      <p class="text-[#181113] text-sm font-bold">Liam</p>
+      <p class="text-[#88636f] text-sm">2d ago</p>
+    </div>
+
+    <p class="text-[#181113] text-sm">My pet, Sparky, just evolved! So proud!</p>
+
+    <!-- Like / Unlike + Counter -->
+    <div class="flex gap-6 pt-2 items-center">
+      <!-- Like Button -->
+      <div class="flex items-center gap-1 cursor-pointer" onclick="doLike(this)">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+          fill="currentColor" viewBox="0 0 256 256" class="like-icon text-[#181113]">
+          <path
+            d="M234,80.12A24,24,0,0,0,216,72H160V56a40,40,0,0,0-40-40,8,8,0,0,0-7.16,4.42L75.06,96H32a16,16,0,0,0-16,16v88a16,16,0,0,0,16,16H204a24,24,0,0,0,23.82-21l12-96A24,24,0,0,0,234,80.12ZM32,112H72v88H32Z">
+          </path>
+        </svg>
+        <span class="text-[#181113] text-sm">Like</span>
+      </div>
+
+      <!-- Unlike Button -->
+      <div class="flex items-center gap-1 cursor-pointer" onclick="doUnlike(this)">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+          fill="currentColor" viewBox="0 0 256 256" class="unlike-icon text-[#181113]">
+          <path
+            d="M239.82,157l-12-96A24,24,0,0,0,204,40H32A16,16,0,0,0,16,56v88a16,16,0,0,0,16,16H75.06l37.78,75.58A8,8,0,0,0,120,240a40,40,0,0,0,40-40V184h56a24,24,0,0,0,23.82-27ZM72,144H32V56H72Zm150,21.29a7.88,7.88,0,0,1-6,2.71H152a8,8,0,0,0-8,8v24a24,24,0,0,1-19.29,23.54L88,150.11V56H204a8,8,0,0,1,7.94,7l12,96A7.87,7.87,0,0,1,222,165.29Z">
+          </path>
+        </svg>
+        <span class="text-[#181113] text-sm">Unlike</span>
+      </div>
+
+      <!-- Common Counter -->
+      <span class="text-[#181113] text-sm font-bold" id="likeCounter">12</span>
+    </div>
+
+    <!-- Post image -->
+    <div class="mt-2 w-full aspect-[3/2] rounded-xl bg-center bg-cover"
+      style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDGYd8ouhhkNUgoEXxlkwJuUJM5o16gz4dBp1zM_QtP4wMZ9_6yAuIoJizr3vyuCMmAKxYQ1vl0w7AoRxBs-0szxXhC_Z2zpvoudbxiwlstXtwbBlXzZ7Pax-0dZl8EFyxNerWho7nOZ1kx7OH8pfnb1kF81mOwYsnHhKXjMuwOnlmT6XPoA2k-NZo397E79ivVMuTiCrEqIZY1O6_-xECBuP-2j8fuATwG4lifrIMR1rl2qUUV5JB6N0_C0gYjLp44tv5Qs9CYQgs');">
+    </div>
+  </div>
+</div>
+
+<script>
+let selectedImage = "";
+
+// Image preview
+function previewImage(event) {
+  const file = event.target.files[0];
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = function (e) {
+      selectedImage = e.target.result;
+    };
+    reader.readAsDataURL(file);
+  }
+}
+
+// Create post dynamically
+function createPost() {
+  const caption = document.getElementById("caption").value.trim();
+  if (!caption && !selectedImage) {
+    alert("Please add a caption or image!");
+    return;
+  }
+
+  const currentTime = new Date().toLocaleString([], { hour: '2-digit', minute: '2-digit' });
+
+  const postHTML = `
+    <div class="flex items-start gap-3 p-2 border rounded-xl bg-white shadow">
+      <div class="bg-center bg-cover rounded-full w-10 h-10 flex-shrink-0"
+        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCFEq0VNHKWbO-D8zFt4sm6m8ntGJCBOzPTmtV6J9IL-bVG4lnnqeGSeaQEsNthdZJudUaWN_MJsv13LqVj1BzhayWPHPHUFdKXm70e4wobPoIPIE2BoEiZX3c3sgf9mu9plcg2ZnFqi0sPvf96EkvGtN5IKP5Z1FTBnxyGXDRFGfj-SHRx8BfewcKRQ3yd8LzdotWsTWiJPt3MmiJDtDhSjDyC-qikG-UPU3VT7QVNfFNvCiVGg49Hr5F3BbBTY51iXMkfwbOriJE');">
+      </div>
+      <div class="flex flex-col flex-1">
+        <div class="flex gap-3">
+          <p class="text-[#181113] text-sm font-bold">You</p>
+          <p class="text-[#181113] text-sm">${currentTime}</p>
+        </div>
+        <p class="text-[#181113] text-sm">${caption}</p>
+
+        <!-- Like / Unlike buttons -->
+        <div class="flex gap-6 pt-2 items-center">
+          <div class="flex items-center gap-1 cursor-pointer" onclick="toggleLike(this)">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256" class="like-icon text-[#88636f]">
+              <path d="M234,80.12A24,24,0,0,0,216,72H160V56a40,40,0,0,0-40-40,8,8,0,0,0-7.16,4.42L75.06,96H32a16,16,0,0,0-16,16v88a16,16,0,0,0,16,16H204a24,24,0,0,0,23.82-21l12-96A24,24,0,0,0,234,80.12ZM32,112H72v88H32Z"></path>
+            </svg>
+            <span class="like-count text-[#181113] text-sm">0</span>
+          </div>
+
+          <div class="flex items-center gap-1 cursor-pointer" onclick="toggleUnlike(this)">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256" class="unlike-icon text-[#88636f]">
+              <path d="M239.82,157l-12-96A24,24,0,0,0,204,40H32A16,16,0,0,0,16,56v88a16,16,0,0,0,16,16H75.06l37.78,75.58A8,8,0,0,0,120,240a40,40,0,0,0,40-40V184h56a24,24,0,0,0,23.82-27ZM72,144H32V56H72Zm150,21.29a7.88,7.88,0,0,1-6,2.71H152a8,8,0,0,0-8,8v24a24,24,0,0,1-19.29,23.54L88,150.11V56H204a8,8,0,0,1,7.94,7l12,96A7.87,7.87,0,0,1,222,165.29Z"></path>
+            </svg>
+            <span class="unlike-count text-[#181113] text-sm">0</span>
+          </div>
+        </div>
+
+        ${selectedImage ? `
+        <div class="mt-2 w-full aspect-[3/2] rounded-xl bg-center bg-cover" style="background-image: url('${selectedImage}');"></div>` : ""}
+      </div>
+    </div>
+  `;
+
+  document.getElementById("posts").insertAdjacentHTML("afterbegin", postHTML);
+
+  // reset
+  document.getElementById("caption").value = "";
+  selectedImage = "";
+}
+
+// Like / Unlike toggle functions
+function toggleLike(el) {
+  const likeIcon = el.querySelector(".like-icon");
+  const unlikeIcon = el.parentNode.querySelector(".unlike-icon");
+  const likeCount = el.querySelector(".like-count");
+  const unlikeCount = el.parentNode.querySelector(".unlike-count");
+
+  let lCount = parseInt(likeCount.textContent);
+  let uCount = parseInt(unlikeCount.textContent);
+
+  if (likeIcon.classList.contains("text-green-500")) {
+    likeIcon.classList.remove("text-green-500");
+    likeIcon.classList.add("text-[#181113]");
+    likeCount.textContent = lCount - 1;
+  } else {
+    likeIcon.classList.add("text-green-500");
+    likeIcon.classList.remove("text-[#181113]");
+    likeCount.textContent = lCount + 1;
+
+    if (unlikeIcon.classList.contains("text-red-500")) {
+      unlikeIcon.classList.remove("text-red-500");
+      unlikeIcon.classList.add("text-[#181113]");
+      unlikeCount.textContent = uCount - 1;
+    }
+  }
+}
+
+function toggleUnlike(el) {
+  const unlikeIcon = el.querySelector(".unlike-icon");
+  const likeIcon = el.parentNode.querySelector(".like-icon");
+  const unlikeCount = el.querySelector(".unlike-count");
+  const likeCount = el.parentNode.querySelector(".like-count");
+
+  let lCount = parseInt(likeCount.textContent);
+  let uCount = parseInt(unlikeCount.textContent);
+
+  if (unlikeIcon.classList.contains("text-red-500")) {
+    unlikeIcon.classList.remove("text-red-500");
+    unlikeIcon.classList.add("text-[#181113]");
+    unlikeCount.textContent = uCount - 1;
+  } else {
+    unlikeIcon.classList.add("text-red-500");
+    unlikeIcon.classList.remove("text-[#181113]");
+    unlikeCount.textContent = uCount + 1;
+
+    if (likeIcon.classList.contains("text-green-500")) {
+      likeIcon.classList.remove("text-green-500");
+      likeIcon.classList.add("text-[#181113]");
+      likeCount.textContent = lCount - 1;
+    }
+  }
+}
+</script>
+                <!-- Another post -->
+               <div class="flex items-start gap-3 p-2 relative">
+  <!-- Profile Image -->
+  <div class="bg-center bg-cover rounded-full w-10 h-10 flex-shrink-0"
+    style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAoY8jV5bu1DhELSgkrniVD4Pksy0Ts0YBYVn0UeiVUGxuA_x7RPmC-zZqraGEY9VDBTHVlvyoUA_RlbY3lZMs6quJ74vjA0Ye9IrjaMFrl1MsbdeX4xaxP9Ieco62XbkSjPxS3szexwrrKvwmLnCeqgCJINigft_sp_EDTo5WnzMj-D-Xd6CE_3SxKpDMb1DoefPeUQz-2Ox1osgVbrfBHHZ1n4qacAWMZ8R6dl52d0mluN0TIw3nCH1BeTaonH9mRVFAhVZqAXww');">
+  </div>
+
+  <!-- Three Dots Menu (Right corner) -->
+  <div class="absolute right-2 top-2">
+    <button onclick="toggleMenu()" class="p-1 rounded-full hover:bg-gray-200">
+      ⋮
+    </button>
+    <div id="menu" class="hidden absolute right-0 mt-2 w-40 bg-white border rounded-xl shadow-md">
+      <button onclick="saveToGallery()" class="block w-full text-left px-4 py-2 text-sm hover:bg-gray-100">Save to Gallery</button>
+      <button onclick="editImage()" class="block w-full text-left px-4 py-2 text-sm hover:bg-gray-100">Edit (Crop)</button>
+      <button onclick="deletePost()" class="block w-full text-left px-4 py-2 text-sm text-red-500 hover:bg-red-100">Delete</button>
+    </div>
+  </div>
+
+  <div class="flex flex-col flex-1">
+    <!-- Username + Time -->
+    <div class="flex gap-3">
+      <p class="text-[#181113] text-sm font-bold">Chloe</p>
+      <p class="text-[#88636f] text-sm">3d ago</p>
+    </div>
+
+    <!-- Post Content -->
+    <p class="text-[#181113] text-sm">Just reached a 7-day streak with my pet, Fluffy! Consistency is key!</p>
+
+    <!-- Like / Unlike with Counter -->
+    <div class="flex gap-6 pt-2 items-center">
+      <!-- Like -->
+      <div class="flex items-center gap-1 cursor-pointer" onclick="doLike()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+          fill="black" viewBox="0 0 256 256">
+          <path
+            d="M234,80.12A24,24,0,0,0,216,72H160V56a40,40,0,0,0-40-40,8,8,0,0,0-7.16,4.42L75.06,96H32a16,16,0,0,0-16,16v88a16,16,0,0,0,16,16H204a24,24,0,0,0,23.82-21l12-96A24,24,0,0,0,234,80.12ZM32,112H72v88H32Z">
+          </path>
+        </svg>
+        <span class="text-[#181113] text-sm">Like</span>
+      </div>
+
+      <!-- Unlike -->
+      <div class="flex items-center gap-1 cursor-pointer" onclick="doUnlike()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+          fill="black" viewBox="0 0 256 256">
+          <path
+            d="M239.82,157l-12-96A24,24,0,0,0,204,40H32A16,16,0,0,0,16,56v88a16,16,0,0,0,16,16H75.06l37.78,75.58A8,8,0,0,0,120,240a40,40,0,0,0,40-40V184h56a24,24,0,0,0,23.82-27ZM72,144H32V56H72Zm150,21.29a7.88,7.88,0,0,1-6,2.71H152a8,8,0,0,0-8,8v24a24,24,0,0,1-19.29,23.54L88,150.11V56H204a8,8,0,0,1,7.94,7l12,96A7.87,7.87,0,0,1,222,165.29Z">
+          </path>
+        </svg>
+        <span class="text-[#181113] text-sm">Unlike</span>
+      </div>
+
+      <!-- Counter -->
+      <span class="text-[#88636f] text-sm font-bold" id="likeCounter">9</span>
+    </div>
+
+    <!-- Post Image -->
+    <div class="mt-2 w-full aspect-[3/2] rounded-xl bg-center bg-cover"
+      style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCz5AGtB43lWja3ZpeiKOO_AQ60iu6yS7LGyNCHSfugPCfPD3ceBhf6NBkwMEptpKJNY-SeYxiXV3IwoS9T5Gjl3u84TEqReZrfXEZBJo44EKnKuTyJyCwFEd8wSDL12Bycj6jy-4mlMfM4OKZkZYFyIS6iV3frpeXOVNDNH_jvtWQgpILbKELsZKOlb_E438mYRQWinv3tBmf5tnfRE05YUEvadVIfEjF8Vdp89bq5SANTmJtLIasB-gj_msR4jVUfW19nJJ5hiow');">
+    </div>
+  </div>
+</div>
+
+<script>
+  let liked = true;
+  let unliked = false;
+
+  function doLike() {
+    let counter = document.getElementById("likeCounter");
+    let value = parseInt(counter.textContent);
+
+    if (!liked) {
+      if (unliked) {
+        counter.textContent = value + 2; // remove unlike and add like
+        unliked = false;
+      } else {
+        counter.textContent = value + 1; // add like
+      }
+      liked = true;
+    } else {
+      counter.textContent = value - 1; // remove like
+      liked = false;
+    }
+  }
+
+  function doUnlike() {
+    let counter = document.getElementById("likeCounter");
+    let value = parseInt(counter.textContent);
+
+    if (!unliked) {
+      if (liked) {
+        counter.textContent = value - 2; // remove like and add unlike
+        liked = false;
+      } else {
+        counter.textContent = value - 1; // add unlike
+      }
+      unliked = true;
+    } else {
+      counter.textContent = value + 1; // remove unlike
+      unliked = false;
+    }
+  }
+
+  function toggleMenu() {
+    document.getElementById("menu").classList.toggle("hidden");
+  }
+
+  function saveToGallery() {
+    alert("Image saved to gallery!");
+  }
+
+  function editImage() {
+    alert("Open crop editor here!");
+  }
+
+  function deletePost() {
+    if (confirm("Are you sure you want to delete this post?")) {
+      alert("Post deleted!");
+    }
+  }
+</script>
+
+          </div>
+        </main>
       </div>
     </div>
   </body>
