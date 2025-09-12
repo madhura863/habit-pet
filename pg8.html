@@ -1,0 +1,140 @@
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&family=Noto+Sans:wght@400;500;700;900&family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap"
+    />
+
+    <title>Stitch Design</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+    <script>
+      (function () {
+        emailjs.init("XDUw0XHeTZhgoz8U2"); // 🔹 Replace with your EmailJS Public Key
+      })();
+    </script>
+  </head>
+  <body
+    class="flex min-h-screen flex-col bg-white"
+    style='font-family: "Plus Jakarta Sans", "Noto Sans", sans-serif;'
+  >
+    <!-- Header -->
+    <header
+      class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#f4f0f2] px-10 py-3"
+    >
+      <div class="flex items-center gap-4 text-[#181113]">
+        <div class="size-4">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M42.1739 20.1739L27.8261 5.82609C29.1366 7.13663 28.3989 10.1876 26.2002 13.7654C24.8538 15.9564 22.9595 18.3449 20.6522 20.6522C18.3449 22.9595 15.9564 24.8538 13.7654 26.2002C10.1876 28.3989 7.13663 29.1366 5.82609 27.8261L20.1739 42.1739C21.4845 43.4845 24.5355 42.7467 28.1133 40.548C30.3042 39.2016 32.6927 37.3073 35 35C37.3073 32.6927 39.2016 30.3042 40.548 28.1133C42.7467 24.5355 43.4845 21.4845 42.1739 20.1739Z"
+              fill="currentColor"
+            ></path>
+          </svg>
+        </div>
+        <h2 class="text-lg font-bold">HabitPet</h2>
+      </div>
+    </header>
+
+    <!-- Centered Form -->
+    <div class="flex flex-1 items-center justify-center">
+      <div class="w-[512px] max-w-[90%] rounded-xl bg-white p-8 shadow-lg">
+        <p class="text-[32px] font-bold text-[#181113]">Contact Us</p>
+        <p class="text-sm text-[#88636f]">
+          We're here to help! Reach out with any questions or feedback.
+        </p>
+
+        <!-- Form -->
+        <form id="contact-form">
+          <!-- Name -->
+          <div class="mt-5">
+            <label class="block">
+              <p class="pb-2 text-base font-medium text-[#181113]">Name</p>
+              <input
+                type="text"
+                name="name"
+                placeholder="Your Name"
+                class="h-14 w-full rounded-xl bg-[#f4f0f2] p-4 text-base text-[#181113] placeholder:text-[#88636f] focus:outline-none"
+                required
+              />
+            </label>
+          </div>
+
+          <!-- Email -->
+          <div class="mt-4">
+            <label class="block">
+              <p class="pb-2 text-base font-medium text-[#181113]">Email</p>
+              <input
+                type="email"
+                name="email"
+                placeholder="Your Email"
+                class="h-14 w-full rounded-xl bg-[#f4f0f2] p-4 text-base text-[#181113] placeholder:text-[#88636f] focus:outline-none"
+                required
+              />
+            </label>
+          </div>
+
+          <!-- Message -->
+          <div class="mt-4">
+            <label class="block">
+              <p class="pb-2 text-base font-medium text-[#181113]">Message</p>
+              <textarea
+                name="message"
+                placeholder="Your Message"
+                class="min-h-[140px] w-full rounded-xl bg-[#f4f0f2] p-4 text-base text-[#181113] placeholder:text-[#88636f] focus:outline-none"
+                required
+              ></textarea>
+            </label>
+          </div>
+
+          <!-- Submit -->
+          <div class="mt-6">
+            <button
+              type="submit"
+              class="h-10 w-full rounded-full bg-[#ea477d] px-4 text-sm font-bold text-white"
+            >
+              Submit
+            </button>
+          </div>
+        </form>
+
+        <!-- Info -->
+        <p class="mt-6 text-center text-base text-[#181113]">
+          For immediate assistance, email us at
+          <span class="font-medium">support@habitpet.com</span>. We aim to
+          respond within 24-48 hours.
+        </p>
+        <p class="mt-2 text-center text-sm text-[#88636f] underline">
+          Check out our FAQs for quick answers to common questions.
+        </p>
+      </div>
+    </div>
+
+    <!-- Script -->
+    <script>
+      document
+        .getElementById("contact-form")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          emailjs
+            .sendForm("service_ez1a4jm", "template_nfofslf", this)
+            .then(
+              function () {
+                alert("Message sent successfully!");
+                document.getElementById("contact-form").reset(); // 🔹 Clears form
+              },
+              function (error) {
+                alert("Failed to send message. Please try again.");
+                console.error(error);
+              }
+            );
+        });
+    </script>
+  </body>
+</html>

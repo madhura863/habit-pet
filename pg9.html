@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Plus+Jakarta+Sans%3Awght%40400%3B500%3B700%3B800"
+    />
+
+    <title>HabitPet - Feedback</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  </head>
+  <body>
+    <div
+      class="relative flex size-full min-h-screen flex-col bg-white group/design-root overflow-x-hidden"
+      style='font-family: "Plus Jakarta Sans", "Noto Sans", sans-serif;'
+    >
+      <div class="layout-container flex h-full grow flex-col">
+        <!-- Header -->
+        <header class="flex items-center justify-between border-b border-solid border-b-[#f4f0f2] px-10 py-3">
+          <div class="flex items-center gap-4 text-[#181113]">
+            <h2 class="text-[#181113] text-lg font-bold">HabitPet</h2>
+          </div>
+        </header>
+
+        <!-- Main content -->
+        <div class="px-40 flex flex-1 justify-center py-5">
+          <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+            <p class="text-[#181113] text-[32px] font-bold px-4 pb-4">Feedback & Suggestions</p>
+
+            <!-- Rating -->
+           
+<h3 class="text-[#181113] text-lg font-bold px-4 pb-2">Rate Your Experience</h3>
+<div class="flex flex-wrap gap-3 p-4">
+  <label>
+    <input type="radio" name="rating" value="Terrible" class="hidden peer" />
+    <span
+      class="cursor-pointer border border-[#ea477d] text-[#ea477d] px-4 h-11 flex items-center rounded-xl
+             peer-checked:bg-[#ea477d] peer-checked:text-white
+             hover:bg-[#ea477d] hover:text-white"
+    >
+      Terrible
+    </span>
+  </label>
+
+  <label>
+    <input type="radio" name="rating" value="Bad" class="hidden peer" />
+    <span
+      class="cursor-pointer border border-[#ea477d] text-[#ea477d] px-4 h-11 flex items-center rounded-xl
+             peer-checked:bg-[#ea477d] peer-checked:text-white
+             hover:bg-[#ea477d] hover:text-white"
+    >
+      Bad
+    </span>
+  </label>
+
+  <label>
+    <input type="radio" name="rating" value="Okay" class="hidden peer" />
+    <span
+      class="cursor-pointer border border-[#ea477d] text-[#ea477d] px-4 h-11 flex items-center rounded-xl
+             peer-checked:bg-[#ea477d] peer-checked:text-white
+             hover:bg-[#ea477d] hover:text-white"
+    >
+      Okay
+    </span>
+  </label>
+
+  <label>
+    <input type="radio" name="rating" value="Good" class="hidden peer" />
+    <span
+      class="cursor-pointer border border-[#ea477d] text-[#ea477d] px-4 h-11 flex items-center rounded-xl
+             peer-checked:bg-[#ea477d] peer-checked:text-white
+             hover:bg-[#ea477d] hover:text-white"
+    >
+      Good
+    </span>
+  </label>
+
+  <label>
+    <input type="radio" name="rating" value="Excellent" class="hidden peer" />
+    <span
+      class="cursor-pointer border border-[#ea477d] text-[#ea477d] px-4 h-11 flex items-center rounded-xl
+             peer-checked:bg-[#ea477d] peer-checked:text-white
+             hover:bg-[#ea477d] hover:text-white"
+    >
+      Excellent
+    </span>
+  </label>
+</div>
+
+
+
+
+            <!-- Experience -->
+            <h3 class="text-[#181113] text-lg font-bold px-4 pb-2">Tell us more about your experience</h3>
+            <div class="px-4 py-3">
+              <textarea
+                id="experience"
+                placeholder="Share your experience..."
+                class="form-input w-full resize-none rounded-xl border border-[#e5dcdf] min-h-36 p-3"
+              ></textarea>
+            </div>
+
+            <!-- Bug -->
+            <h3 class="text-[#181113] text-lg font-bold px-4 pb-2">Report a Bug</h3>
+            <div class="px-4 py-3">
+              <textarea
+                id="bug"
+                placeholder="Describe the bug you encountered"
+                class="form-input w-full resize-none rounded-xl border border-[#e5dcdf] min-h-36 p-3"
+              ></textarea>
+            </div>
+
+            <!-- Feature -->
+            <h3 class="text-[#181113] text-lg font-bold px-4 pb-2">Suggest a Feature</h3>
+            <div class="px-4 py-3">
+              <textarea
+                id="feature"
+                placeholder="What feature would you like to see?"
+                class="form-input w-full resize-none rounded-xl border border-[#e5dcdf] min-h-36 p-3"
+              ></textarea>
+            </div>
+
+            <!-- Submit -->
+            <div class="flex px-4 py-3 justify-end">
+              <button
+                id="submit-feedback"
+                type="button"
+                class="flex items-center justify-center rounded-full h-10 px-4 bg-[#ea477d] text-white text-sm font-bold"
+              >
+                Submit Feedback
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- JS -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.querySelector("#submit-feedback").addEventListener("click", function (event) {
+          event.preventDefault();
+
+          const rating = document.querySelector("input[name='rating']:checked")?.value || "";
+          const experience = document.querySelector("#experience").value.trim();
+          const bug = document.querySelector("#bug").value.trim();
+          const feature = document.querySelector("#feature").value.trim();
+
+          console.log("Submitting:", { rating, experience, bug, feature });
+
+          fetch("http://localhost:5000/feedback", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ rating, experience, bug, feature }),
+          })
+            .then((res) => res.text())
+            .then((msg) => alert(msg))
+            .catch((err) => console.error("Error:", err));
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,135 @@
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&family=Noto+Sans:wght@400;500;700;900&family=Plus+Jakarta+Sans:wght@400;500;700;800"
+    />
+
+    <title>HabitPet</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  </head>
+  <body class="bg-white" style='font-family: "Plus Jakarta Sans", "Noto Sans", sans-serif;'>
+    <div class="flex flex-col min-h-screen">
+      <!-- HEADER -->
+      <header class="flex items-center justify-between border-b border-[#f4f0f2] px-10 py-3">
+        <div class="flex items-center gap-2 text-[#181113]">
+          <h2 class="text-lg font-bold">HabitPet</h2>
+        </div>
+        <div class="flex items-center gap-8">
+          <a class="text-sm font-medium text-[#181113]" href="#">Features</a>
+          <a class="text-sm font-medium text-[#181113]" href="#">Pricing</a>
+          <button
+            onclick="window.location.href='signup.html'"
+            class="rounded-full h-10 px-4 bg-[#ef427c] text-white text-sm font-bold"
+          >
+            Get Started
+          </button>
+          <button
+            onclick="window.location.href='login.html'"
+            class="rounded-full h-10 px-4 bg-[#f4f0f2] text-[#181113] text-sm font-bold"
+          >
+            Log In
+          </button>
+        </div>
+      </header>
+
+      <!-- HERO SECTION -->
+      <section class="flex flex-col md:flex-row items-center justify-center flex-1 px-10 py-10 gap-10">
+        <!-- Slideshow -->
+        <div class="relative max-w-[400px] aspect-video rounded-xl overflow-hidden shadow-lg">
+          <div id="slideshow" class="flex transition-transform duration-700">
+            <!-- Slide 1 -->
+            <div class="flex min-w-full">
+              <img src="dog1.jpg" class="w-1/2 object-cover" />
+              <img src="dog2.jpg" class="w-1/2 object-cover" />
+            </div>
+            <!-- Slide 2 -->
+            <div class="flex min-w-full">
+              <img src="dog3.jpg" class="w-1/2 object-cover" />
+              <img src="dog4.jpg" class="w-1/2 object-cover" />
+            </div>
+            <!-- Slide 3 -->
+            <div class="flex min-w-full">
+              <img src="dog5.jpg" class="w-1/2 object-cover" />
+              <img src="dog6.jpg" class="w-1/2 object-cover" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Text -->
+        <div class="max-w-lg text-center md:text-left">
+          <h1 class="text-4xl md:text-5xl font-black text-[#181113] leading-tight">
+            Build Habits, Grow a Happy Pet!
+          </h1>
+          <p class="mt-3 text-base text-[#181113]">
+            Transform your daily routine into a rewarding adventure. Track your habits,
+            nurture your virtual pet, and watch it evolve as you achieve your goals.
+          </p>
+          <button
+            onclick="window.location.href='pg2.html'"
+            class="mt-5 rounded-full h-12 px-6 bg-[#ef427c] text-white text-base font-bold"
+          >
+            Get Started
+          </button>
+        </div>
+      </section>
+
+      <!-- FEATURES -->
+     <!-- FEATURES -->
+<section class="px-10 py-16 text-center">
+  <h2 class="text-3xl font-bold text-[#181113] mb-6">Key Features</h2>
+  <div class="flex flex-wrap justify-center gap-4">
+    <div class="p-5 border rounded-lg w-64">
+      <h3 class="font-bold text-[#181113]">Habit Tracking</h3>
+      <p class="text-sm text-[#89616f]">Log your daily habits and track your progress.</p>
+    </div>
+    <div class="p-5 border rounded-lg w-64">
+      <h3 class="font-bold text-[#181113]">Pet Evolution</h3>
+      <p class="text-sm text-[#89616f]">Your pet grows as you complete habits.</p>
+    </div>
+    <div class="p-5 border rounded-lg w-64">
+      <h3 class="font-bold text-[#181113]">Daily Rewards</h3>
+      <p class="text-sm text-[#89616f]">Earn rewards as you stay on track.</p>
+    </div>
+  </div>
+</section>
+
+
+      <!-- CONTACT -->
+      <section class="px-10 py-16 bg-[#f9f9f9] text-center">
+        <h2 class="text-3xl font-bold text-[#181113] mb-4">Have questions?</h2>
+        <p class="text-base text-[#181113] mb-6">
+          Reach out to our support team for any inquiries or assistance.
+        </p>
+        <button
+          onclick="window.location.href='pg8.html'"
+          class="rounded-full h-12 px-6 bg-[#ef427c] text-white text-base font-bold"
+        >
+          Contact Us
+        </button>
+      </section>
+
+      <!-- FOOTER -->
+      <footer class="py-6 text-center text-[#89616f] text-sm">
+        © 2024 HabitPet. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+      </footer>
+    </div>
+
+    <!-- SLIDESHOW SCRIPT -->
+    <script>
+      const slideshow = document.getElementById("slideshow");
+      const slides = slideshow.children.length;
+      let index = 0;
+
+      setInterval(() => {
+        index = (index + 1) % slides;
+        slideshow.style.transform = `translateX(-${index * 100}%)`;
+      }, 3000);
+    </script>
+  </body>
+</html>

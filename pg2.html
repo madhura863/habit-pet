@@ -1,0 +1,234 @@
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght@400;500;700;900&amp;family=Plus+Jakarta+Sans%3Awght@400;500;700;800"
+    />
+
+    <title>HabitPet - Habits</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <style>
+      .message-box {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        text-align: center;
+        border: 2px solid #ef427c;
+        max-width: 300px;
+      }
+      .message-box button {
+        margin-top: 15px;
+        background-color: #ef427c;
+        color: white;
+        padding: 8px 16px;
+        border-radius: 9999px;
+        font-weight: bold;
+      }
+      .strikethrough {
+        text-decoration: line-through;
+        color: #88636f;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="relative flex size-full min-h-screen flex-col bg-white group/design-root overflow-x-hidden" style='font-family: "Plus Jakarta Sans", "Noto Sans", sans-serif;'>
+      <div class="layout-container flex h-full grow flex-col">
+        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#f4f0f2] px-10 py-3">
+          <div class="flex items-center gap-4 text-[#181113]">
+            <div class="size-4">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_6_543)">
+                  <path d="M42.1739 20.1739L27.8261 5.82609C29.1366 7.13663 28.3989 10.1876 26.2002 13.7654C24.8538 15.9564 22.9595 18.3449 20.6522 20.6522C18.3449 22.9595 15.9564 24.8538 13.7654 26.2002C10.1876 28.3989 7.13663 29.1366 5.82609 27.8261L20.1739 42.1739C21.4845 43.4845 24.5355 42.7467 28.1133 40.548C30.3042 39.2016 32.6927 37.3073 35 35C37.3073 32.6927 39.2016 30.3042 40.548 28.1133C42.7467 24.5355 43.4845 21.4845 42.1739 20.1739Z" fill="currentColor"></path>
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M7.24189 26.4066C7.31369 26.4411 7.64204 26.5637 8.52504 26.3738C9.59462 26.1438 11.0343 25.5311 12.7183 24.4963C14.7583 23.2426 17.0256 21.4503 19.238 19.238C21.4503 17.0256 23.2426 14.7583 24.4963 12.7183C25.5311 11.0343 26.1438 9.59463 26.3738 8.52504C26.5637 7.64204 26.4411 7.31369 26.4066 7.24189C26.345 7.21246 26.143 7.14535 25.6664 7.1918C24.9745 7.25925 23.9954 7.5498 22.7699 8.14278C20.3369 9.32007 17.3369 11.4915 14.4142 14.4142C11.4915 17.3369 9.32007 20.3369 8.14278 22.7699C7.5498 23.9954 7.25925 24.9745 7.1918 25.6664C7.14534 26.143 7.21246 26.345 7.24189 26.4066ZM29.9001 10.7285C29.4519 12.0322 28.7617 13.4172 27.9042 14.8126C26.465 17.1544 24.4686 19.6641 22.0664 22.0664C19.6641 24.4686 17.1544 26.465 14.8126 27.9042C13.4172 28.7617 12.0322 29.4519 10.7285 29.9001L21.5754 40.747C21.6001 40.7606 21.8995 40.931 22.8729 40.7217C23.9424 40.4916 25.3821 39.879 27.0661 38.8441C29.1062 37.5904 31.3734 35.7982 33.5858 33.5858C35.7982 31.3734 37.5904 29.1062 38.8441 27.0661C39.879 25.3821 40.4916 23.9425 40.7216 22.8729C40.931 21.8995 40.7606 21.6001 40.747 21.5754L29.9001 10.7285ZM29.2403 4.41187L43.5881 18.7597C44.9757 20.1473 44.9743 22.1235 44.6322 23.7139C44.2714 25.3919 43.4158 27.2666 42.252 29.1604C40.8128 31.5022 38.8165 34.012 36.4142 36.4142C34.012 38.8165 31.5022 40.8128 29.1604 42.252C27.2666 43.4158 25.3919 44.2714 23.7139 44.6322C22.1235 44.9743 20.1473 44.9757 18.7597 43.5881L4.41187 29.2403C3.29027 28.1187 3.08209 26.5973 3.21067 25.2783C3.34099 23.9415 3.8369 22.4852 4.54214 21.0277C5.96129 18.0948 8.43335 14.7382 11.5858 11.5858C14.7382 8.43335 18.0948 5.9613 21.0277 4.54214C22.4852 3.8369 23.9415 3.34099 25.2783 3.21067C26.5973 3.08209 28.1187 3.29028 29.2403 4.41187Z" fill="currentColor"></path>
+                </g>
+                <defs>
+                  <clipPath id="clip0_6_543"><rect width="48" height="48" fill="white"></rect></clipPath>
+                </defs>
+              </svg>
+            </div>
+            <h2 class="text-[#181113] text-lg font-bold leading-tight tracking-[-0.015em]">HabitPet</h2>
+          </div>
+          <div class="flex flex-1 justify-end gap-8">
+            <div class="flex items-center gap-9">
+              <a class="text-[#181113] text-sm font-medium leading-normal" href="habits_dashboard.html">Home</a>
+              <a class="text-[#181113] text-sm font-medium leading-normal active-link" href="pg2.html">Habits</a>
+              <a class="text-[#181113] text-sm font-medium leading-normal" href="pg4.html">Shop</a>
+              <a class="text-[#181113] text-sm font-medium leading-normal" href="pg3.html">Community</a>
+            </div>
+            <a href="pg10.html" class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 bg-[#f4f0f2] text-[#181113] gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5">
+              <div class="text-[#181113]" data-icon="Bell" data-size="20px" data-weight="regular">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                  <path d="M221.8,175.94C216.25,166.38,208,139.33,208,104a80,80,0,1,0-160,0c0,35.34-8.26,62.38-13.81,71.94A16,16,0,0,0,48,200H88.81a40,40,0,0,0,78.38,0H208a16,16,0,0,0,13.8-24.06ZM128,216a24,24,0,0,1-22.62-16h45.24A24,24,0,0,1,128,216ZM48,184c7.7-13.24,16-43.92,16-80a64,64,0,1,1,128,0c0,36.05,8.28,66.73,16,80Z"></path>
+                </svg>
+              </div>
+            </a>
+            <a href="pg5.html" class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD6tfL16hz3nGKsegrrl6WXYkQOtqDEO6G_0RfCtG6WskBiCGmsR6cFAK3CYgBKc4lJnQttBu28LZ08G_0GPiGOWAj0qy-2xeAy2FHqz3k-cKU7pjbiG_jWL92hVA5gdA4G9McYk6MpJ7sfmh25iKj16G3FQnz1n82gL1brRv6zDWnkvnNS_nCt6jO8Vg_Q8zNr9ENgJYf7yZffichh7HSBArGNS-cBLIP9-dNbIhidykGawn14ZvoFNryXLxC8bzPwPw6u2MVPfWA");'></a>
+          </div>
+        </header>
+        <div class="px-40 flex flex-1 justify-center py-5">
+          <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+            <div class="flex flex-wrap justify-between gap-3 p-4">
+              <p class="text-[#181113] tracking-light text-[32px] font-bold leading-tight min-w-72">Your Habits</p>
+            </div>
+            <div class="p-4">
+              <p class="text-[#88636f] text-base font-normal leading-normal pb-4">
+                You currently have a total of 15 habits. Stay consistent to
+                achieve your goals!
+              </p>
+            </div>
+            <h2 class="text-[#181113] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Daily</h2>
+            <div class="flex items-center gap-4 bg-white px-4 min-h-[72px] py-2">
+              <div class="text-[#181113] flex items-center justify-center rounded-lg bg-[#f4f0f2] shrink-0 size-12" data-icon="Sun" data-size="24px" data-weight="regular">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                  <path d="M120,40V16a8,8,0,0,1,16,0V40a8,8,0,0,1-16,0Zm72,88a64,64,0,1,1-64-64A64.07,64.07,0,0,1,192,128Zm-16,0a48,48,0,1,0-48,48A48.05,48.05,0,0,0,176,128ZM58.34,69.66A8,8,0,0,0,69.66,58.34l-16-16A8,8,0,0,0,42.34,53.66Zm0,116.68-16,16a8,8,0,0,0,11.32,11.32l16-16a8,8,0,0,0-11.32-11.32ZM192,72a8,8,0,0,0,5.66-2.34l16-16a8,8,0,0,0-11.32-11.32l-16,16A8,8,0,0,0,192,72Zm5.66,114.34a8,8,0,0,0-11.32,11.32l16,16a8,8,0,0,0,11.32-11.32ZM48,128a8,8,0,0,0-8-8H16a8,8,0,0,0,0,16H40A8,8,0,0,0,48,128Zm80,80a8,8,0,0,0-8,8v24a8,8,0,0,0,16,0V216A8,8,0,0,0,128,208Zm112-88H216a8,8,0,0,0,0,16h24a8,8,0,0,0,0-16Z"></path>
+              </svg>
+            </div>
+            <div class="flex flex-col justify-center flex-1">
+              <p class="text-[#181113] text-base font-medium leading-normal line-clamp-1">Wake up by 7 AM</p>
+              <p class="text-[#88636f] text-sm font-normal leading-normal line-clamp-2">Morning Routine</p>
+            </div>
+            <label class="shrink-0">
+              <input type="checkbox" name="task" id="habit-1" class="rounded border-none shadow-[0_0_0_1px_#181113] checked:shadow-[inset_0_0_0_15px_#181113] checked:bg-none checked:shadow-none bg-white size-6" />
+            </label>
+          </div>
+          <div class="flex items-center gap-4 bg-white px-4 min-h-[72px] py-2">
+            <div class="text-[#181113] flex items-center justify-center rounded-lg bg-[#f4f0f2] shrink-0 size-12" data-icon="Barbell" data-size="24px" data-weight="regular">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                <path d="M248,120h-8V88a16,16,0,0,0-16-16H208V64a16,16,0,0,0-16-16H168a16,16,0,0,0-16,16v56H104V64A16,16,0,0,0,88,48H64A16,16,0,0,0,48,64v8H32A16,16,0,0,0,16,88v32H8a8,8,0,0,0,0,16h8v32a16,16,0,0,0,16,16H48v8a16,16,0,0,0,16,16H88a16,16,0,0,0,16-16V136h48v56a16,16,0,0,0,16,16h24a16,16,0,0,0,16-16v-8h16a16,16,0,0,0,16-16V136h8a8,8,0,0,0,0-16ZM32,168V88H48v80Zm56,24H64V64H88V192Zm104,0H168V64h24V175.82c0,.06,0,.12,0,.18s0,.12,0,.18V192Zm32-24H208V88h16Z"></path>
+              </svg>
+            </div>
+            <div class="flex flex-col justify-center flex-1">
+              <p class="text-[#181113] text-base font-medium leading-normal line-clamp-1">30-minute workout</p>
+              <p class="text-[#88636f] text-sm font-normal leading-normal line-clamp-2">Fitness</p>
+            </div>
+            <label class="shrink-0">
+              <input type="checkbox" name="task" id="habit-2" class="rounded border-none shadow-[0_0_0_1px_#181113] checked:shadow-[inset_0_0_0_15px_#181113] checked:bg-none checked:shadow-none bg-white size-6" />
+            </label>
+          </div>
+          <div class="flex items-center gap-4 bg-white px-4 min-h-[72px] py-2">
+            <div class="text-[#181113] flex items-center justify-center rounded-lg bg-[#f4f0f2] shrink-0 size-12" data-icon="BookOpen" data-size="24px" data-weight="regular">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                <path d="M224,48H160a40,40,0,0,0-32,16A40,40,0,0,0,96,48H32A16,16,0,0,0,16,64V192a16,16,0,0,0,16,16H96a24,24,0,0,1,24,24,8,8,0,0,0,16,0,24,24,0,0,1,24-24h64a16,16,0,0,0,16-16V64A16,16,0,0,0,224,48ZM96,192H32V64H96a24,24,0,0,1,24,24V200A39.81,39.81,0,0,0,96,192Zm128,0H160a39.81,39.81,0,0,0-24,8V88a24,24,0,0,1,24-24h64Z"></path>
+              </svg>
+            </div>
+            <div class="flex flex-col justify-center flex-1">
+              <p class="text-[#181113] text-base font-medium leading-normal line-clamp-1">Read for 30 minutes</p>
+              <p class="text-[#88636f] text-sm font-normal leading-normal line-clamp-2">Learning</p>
+            </div>
+            <label class="shrink-0">
+              <input type="checkbox" name="task" id="habit-3" class="rounded border-none shadow-[0_0_0_1px_#181113] checked:shadow-[inset_0_0_0_15px_#181113] checked:bg-none checked:shadow-none bg-white size-6" />
+            </label>
+          </div>
+          <div class="flex items-center gap-4 bg-white px-4 min-h-[72px] py-2">
+            <div class="text-[#181113] flex items-center justify-center rounded-lg bg-[#f4f0f2] shrink-0 size-12" data-icon="Droplet" data-size="24px" data-weight="regular">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                <path d="M168,104a40,40,0,0,0-80,0c0,13.78,11.36,36.56,24.51,59.35a4,4,0,0,0,6.9,0C156.64,140.56,168,117.78,168,104ZM128,150c-11.23-17.76-24-38-24-46a24,24,0,0,1,48,0C152,112,139.23,132.24,128,150ZM128,24A104,104,0,0,0,36.57,171.43c15.2,20.81,33.56,36.16,47.2,42.84,10.74,5.2,16.59,4.42,18.42,4.35a8,8,0,0,0,1.81-.19,8,8,0,0,0,7.9-5.18,8,8,0,0,0-.9-7.1,72.71,72.71,0,0,1-3.66-8.25,8,8,0,0,0-13.71,7.2,56.88,56.88,0,0,0,6.47-15.35c2.45-6.52,4.14-11.66,4.64-13.62L128,198l19.5-68.52a8,8,0,0,0-3.64-8.8,8,8,0,0,0-8.84,3.63L128,136.25,97.74,105.95A72.33,72.33,0,0,1,88,86.29V80a8,8,0,0,0-16,0v6.29A88.35,88.35,0,0,0,94.13,119.7c6.76,6.9,13,13.23,19.29,19.52L128,162.75l14.58-14.58c14-14,24.73-28.71,32.74-45.71A88.35,88.35,0,0,0,184,86.29V80a8,8,0,0,0-16,0V86.29A72.33,72.33,0,0,1,160.26,105.95L128,136.25,102.34,110.59A104,104,0,0,0,128,232,103.11,103.11,0,0,0,219.25,182.25l-2.61-3.79c-10.74,5.2-16.59,4.42-18.42,4.35a8,8,0,0,0-1.81-.19,8,8,0,0,0-7.9,5.18,8,8,0,0,0,.9,7.1c2.14,2.3,13.56,15,19.89,23.36,6.76,8.87,11.39,15.18,13.62,17.26A103.71,103.71,0,0,0,128,24Z"></path>
+              </svg>
+            </div>
+            <div class="flex flex-col justify-center flex-1">
+              <p class="text-[#181113] text-base font-medium leading-normal line-clamp-1">Drink 8 glasses of water</p>
+              <p class="text-[#88636f] text-sm font-normal leading-normal line-clamp-2">Health</p>
+            </div>
+            <label class="shrink-0">
+              <input type="checkbox" name="task" id="habit-4" class="rounded border-none shadow-[0_0_0_1px_#181113] checked:shadow-[inset_0_0_0_15px_#181113] checked:bg-none checked:shadow-none bg-white size-6" />
+            </label>
+          </div>
+          <div class="flex items-center gap-4 bg-white px-4 min-h-[72px] py-2">
+            <div class="text-[#181113] flex items-center justify-center rounded-lg bg-[#f4f0f2] shrink-0 size-12" data-icon="MoonStars" data-size="24px" data-weight="regular">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                <path d="M174.63,222.18a8,8,0,0,1-13.84,7.84A96,96,0,0,1,128,32h3.58a8,8,0,0,1,0,16h-3.58a80,80,0,1,0,51.84,142.16,8,8,0,0,1-7.84,13.84,8.12,8.12,0,0,1-6.16-2.58A88.1,88.1,0,0,1,128,40a88,88,0,0,0-45.69,165.71,8,8,0,0,1-.58,11.23,8,8,0,0,1-11.23.58A104,104,0,0,1,228.47,159,103.79,103.79,0,0,1,174.63,222.18ZM236.4,145.42a8,8,0,0,1-11.23-2.61,8,8,0,0,1-2.61-11.23,16,16,0,0,0-23.71,11.16,8,8,0,0,1-15.65-4,32,32,0,0,1,47.28-22.12,8,8,0,0,1,2.62,11.23,8,8,0,0,1-11.23,2.61ZM208,48a8,8,0,0,1-8-8,16,16,0,0,0-32,0,8,8,0,0,1-16,0,32,32,0,0,1,64,0A8,8,0,0,1,208,48ZM109.91,66.19a8,8,0,0,1-11.24-2.58L96,59.39,91.33,63.61a8,8,0,0,1-11.24-2.58,8,8,0,0,1-2.58-11.24l6-6A8,8,0,0,1,88,38.45l4.67,4.22L98.54,38a8,8,0,0,1,11.24,2.58l6,6a8,8,0,0,1-2.58,11.24L117,59.39l-4.67,4.22A8.1,8.1,0,0,1,109.91,66.19Z"></path>
+              </svg>
+            </div>
+            <div class="flex flex-col justify-center flex-1">
+              <p class="text-[#181113] text-base font-medium leading-normal line-clamp-1">Meditate for 10 minutes</p>
+              <p class="text-[#88636f] text-sm font-normal leading-normal line-clamp-2">Mindfulness</p>
+            </div>
+            <label class="shrink-0">
+              <input type="checkbox" name="task" id="habit-5" class="rounded border-none shadow-[0_0_0_1px_#181113] checked:shadow-[inset_0_0_0_15px_#181113] checked:bg-none checked:shadow-none bg-white size-6" />
+            </label>
+          </div>
+          <h2 class="text-[#181113] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Weekly</h2>
+          <div class="flex items-center gap-4 bg-white px-4 min-h-[72px] py-2">
+            <div class="text-[#181113] flex items-center justify-center rounded-lg bg-[#f4f0f2] shrink-0 size-12" data-icon="ShoppingCart" data-size="24px" data-weight="regular">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                <path d="M222.14,70.62a8,8,0,0,0-7-4.62H59.4L55,42.54A8,8,0,0,0,48,32H24a8,8,0,0,0,0,16h16.28L60.7,163.46A8,8,0,0,0,68,168H208a8,8,0,0,0,7.94-6.83l16-96A8,8,0,0,0,222.14,70.62ZM202.82,152H73.18L59,72H215Z"></path>
+              </svg>
+            </div>
+            <div class="flex flex-col justify-center flex-1">
+              <p class="text-[#181113] text-base font-medium leading-normal line-clamp-1">Meal Prep</p>
+              <p class="text-[#88636f] text-sm font-normal leading-normal line-clamp-2">Chores</p>
+            </div>
+            <label class="shrink-0">
+              <input type="checkbox" name="task" id="habit-6" class="rounded border-none shadow-[0_0_0_1px_#181113] checked:shadow-[inset_0_0_0_15px_#181113] checked:bg-none checked:shadow-none bg-white size-6" />
+            </label>
+          </div>
+          <div class="flex items-center gap-4 bg-white px-4 min-h-[72px] py-2">
+            <div class="text-[#181113] flex items-center justify-center rounded-lg bg-[#f4f0f2] shrink-0 size-12" data-icon="Pen" data-size="24px" data-weight="regular">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                <path d="M228.18,52.82l-32-32a8,8,0,0,0-11.32,0L38.18,175.45a8,8,0,0,0-2,3.95L20.12,228.18a8,8,0,0,0,9.7,9.7l48.78-16.06a8,8,0,0,0,3.95-2L228.18,64.14A8,8,0,0,0,228.18,52.82Zm-24,24L175.45,56,43.31,188.13,68,212.87Zm-92.4,124L48,192.83,63.17,208ZM215.17,64,192,40.83,215.17,64Z"></path>
+              </svg>
+            </div>
+            <div class="flex flex-col justify-center flex-1">
+              <p class="text-[#181113] text-base font-medium leading-normal line-clamp-1">Journal for 15 minutes</p>
+              <p class="text-[#88636f] text-sm font-normal leading-normal line-clamp-2">Mindfulness</p>
+            </div>
+            <label class="shrink-0">
+              <input type="checkbox" name="task" id="habit-7" class="rounded border-none shadow-[0_0_0_1px_#181113] checked:shadow-[inset_0_0_0_15px_#181113] checked:bg-none checked:shadow-none bg-white size-6" />
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const links = document.querySelectorAll("header .flex a");
+        links.forEach(link => {
+          if (link.href === window.location.href) {
+            link.classList.add("active-link");
+          } else {
+            link.classList.remove("active-link");
+          }
+        });
+
+        function showMessage(msg) {
+          const messageBox = document.createElement("div");
+          messageBox.className = "message-box";
+          messageBox.innerHTML = `
+            <p>${msg}</p>
+            <button onclick="this.parentNode.remove()">OK</button>
+          `;
+          document.body.appendChild(messageBox);
+        }
+
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        checkboxes.forEach(checkbox => {
+          checkbox.addEventListener("change", (event) => {
+            const parent = event.target.closest('.flex');
+            const title = parent.querySelector('p.text-base');
+            const completed = event.target.checked;
+            if (title) {
+              if (completed) {
+                title.classList.add("strikethrough");
+                showMessage(`Habit completed: ${title.textContent}`);
+              } else {
+                title.classList.remove("strikethrough");
+                showMessage(`Habit marked as incomplete: ${title.textContent}`);
+              }
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
