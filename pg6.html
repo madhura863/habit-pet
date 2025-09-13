@@ -1,140 +1,672 @@
-<html>
-  <head>
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
-    <link
-      rel="stylesheet"
-      as="style"
-      onload="this.rel='stylesheet'"
-      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Plus+Jakarta+Sans%3Awght%40400%3B500%3B700%3B800"
-    />
-
-    <title>Stitch Design</title>
-    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
-
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-  </head>
-  <body>
-    <div class="relative flex size-full min-h-screen flex-col bg-white group/design-root overflow-x-hidden" style='font-family: "Plus Jakarta Sans", "Noto Sans", sans-serif;'>
-      <div class="layout-container flex h-full grow flex-col">
-        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#f4f0f2] px-10 py-3">
-          <div class="flex items-center gap-4 text-[#181113]">
-            <div class="size-4">
-              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g clip-path="url(#clip0_6_543)">
-                  <path
-                    d="M42.1739 20.1739L27.8261 5.82609C29.1366 7.13663 28.3989 10.1876 26.2002 13.7654C24.8538 15.9564 22.9595 18.3449 20.6522 20.6522C18.3449 22.9595 15.9564 24.8538 13.7654 26.2002C10.1876 28.3989 7.13663 29.1366 5.82609 27.8261L20.1739 42.1739C21.4845 43.4845 24.5355 42.7467 28.1133 40.548C30.3042 39.2016 32.6927 37.3073 35 35C37.3073 32.6927 39.2016 30.3042 40.548 28.1133C42.7467 24.5355 43.4845 21.4845 42.1739 20.1739Z"
-                    fill="currentColor"
-                  ></path>
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M7.24189 26.4066C7.31369 26.4411 7.64204 26.5637 8.52504 26.3738C9.59462 26.1438 11.0343 25.5311 12.7183 24.4963C14.7583 23.2426 17.0256 21.4503 19.238 19.238C21.4503 17.0256 23.2426 14.7583 24.4963 12.7183C25.5311 11.0343 26.1438 9.59463 26.3738 8.52504C26.5637 7.64204 26.4411 7.31369 26.4066 7.24189C26.345 7.21246 26.143 7.14535 25.6664 7.1918C24.9745 7.25925 23.9954 7.5498 22.7699 8.14278C20.3369 9.32007 17.3369 11.4915 14.4142 14.4142C11.4915 17.3369 9.32007 20.3369 8.14278 22.7699C7.5498 23.9954 7.25925 24.9745 7.1918 25.6664C7.14534 26.143 7.21246 26.345 7.24189 26.4066ZM29.9001 10.7285C29.4519 12.0322 28.7617 13.4172 27.9042 14.8126C26.465 17.1544 24.4686 19.6641 22.0664 22.0664C19.6641 24.4686 17.1544 26.465 14.8126 27.9042C13.4172 28.7617 12.0322 29.4519 10.7285 29.9001L21.5754 40.747C21.6001 40.7606 21.8995 40.931 22.8729 40.7217C23.9424 40.4916 25.3821 39.879 27.0661 38.8441C29.1062 37.5904 31.3734 35.7982 33.5858 33.5858C35.7982 31.3734 37.5904 29.1062 38.8441 27.0661C39.879 25.3821 40.4916 23.9425 40.7216 22.8729C40.931 21.8995 40.7606 21.6001 40.747 21.5754L29.9001 10.7285ZM29.2403 4.41187L43.5881 18.7597C44.9757 20.1473 44.9743 22.1235 44.6322 23.7139C44.2714 25.3919 43.4158 27.2666 42.252 29.1604C40.8128 31.5022 38.8165 34.012 36.4142 36.4142C34.012 38.8165 31.5022 40.8128 29.1604 42.252C27.2666 43.4158 25.3919 44.2714 23.7139 44.6322C22.1235 44.9743 20.1473 44.9757 18.7597 43.5881L4.41187 29.2403C3.29027 28.1187 3.08209 26.5973 3.21067 25.2783C3.34099 23.9415 3.8369 22.4852 4.54214 21.0277C5.96129 18.0948 8.43335 14.7382 11.5858 11.5858C14.7382 8.43335 18.0948 5.9613 21.0277 4.54214C22.4852 3.8369 23.9415 3.34099 25.2783 3.21067C26.5973 3.08209 28.1187 3.29028 29.2403 4.41187Z"
-                    fill="currentColor"
-                  ></path>
-                </g>
-                <defs>
-                  <clipPath id="clip0_6_543"><rect width="48" height="48" fill="white"></rect></clipPath>
-                </defs>
-              </svg>
-            </div>
-            <h2 class="text-[#181113] text-lg font-bold leading-tight tracking-[-0.015em]">HabitPet</h2>
-          </div>
-          <div class="flex flex-1 justify-end gap-8">
-            <button
-              class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 bg-[#f4f0f2] text-[#181113] gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5"
-            >
-              <div class="text-[#181113]" data-icon="Gear" data-size="20px" data-weight="regular">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
-                  <path
-                    d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160Zm88-29.84q.06-2.16,0-4.32l14.92-18.64a8,8,0,0,0,1.48-7.06,107.21,107.21,0,0,0-10.88-26.25,8,8,0,0,0-6-3.93l-23.72-2.64q-1.48-1.56-3-3L186,40.54a8,8,0,0,0-3.94-6,107.71,107.71,0,0,0-26.25-10.87,8,8,0,0,0-7.06,1.49L130.16,40Q128,40,125.84,40L107.2,25.11a8,8,0,0,0-7.06-1.48A107.6,107.6,0,0,0,73.89,34.51a8,8,0,0,0-3.93,6L67.32,64.27q-1.56,1.49-3,3L40.54,70a8,8,0,0,0-6,3.94,107.71,107.71,0,0,0-10.87,26.25,8,8,0,0,0,1.49,7.06L40,125.84Q40,128,40,130.16L25.11,148.8a8,8,0,0,0-1.48,7.06,107.21,107.21,0,0,0,10.88,26.25,8,8,0,0,0,6,3.93l23.72,2.64q1.49,1.56,3,3L70,215.46a8,8,0,0,0,3.94,6,107.71,107.71,0,0,0,26.25,10.87,8,8,0,0,0,7.06-1.49L125.84,216q2.16.06,4.32,0l18.64,14.92a8,8,0,0,0,7.06,1.48,107.21,107.21,0,0,0,26.25-10.88,8,8,0,0,0,3.93-6l2.64-23.72q1.56-1.48,3-3L215.46,186a8,8,0,0,0,6-3.94,107.71,107.71,0,0,0,10.87-26.25,8,8,0,0,0-1.49-7.06Zm-16.1-6.5a73.93,73.93,0,0,1,0,8.68,8,8,0,0,0,1.74,5.48l14.19,17.73a91.57,91.57,0,0,1-6.23,15L187,173.11a8,8,0,0,0-5.1,2.64,74.11,74.11,0,0,1-6.14,6.14,8,8,0,0,0-2.64,5.1l-2.51,22.58a91.32,91.32,0,0,1-15,6.23l-17.74-14.19a8,8,0,0,0-5-1.75h-.48a73.93,73.93,0,0,1-8.68,0,8,8,0,0,0-5.48,1.74L100.45,215.8a91.57,91.57,0,0,1-15-6.23L82.89,187a8,8,0,0,0-2.64-5.1,74.11,74.11,0,0,1-6.14-6.14,8,8,0,0,0-5.1-2.64L46.43,170.6a91.32,91.32,0,0,1-6.23-15l14.19-17.74a8,8,0,0,0,1.74-5.48,73.93,73.93,0,0,1,0-8.68,8,8,0,0,0-1.74-5.48L40.2,100.45a91.57,91.57,0,0,1,6.23-15L69,82.89a8,8,0,0,0,5.1-2.64,74.11,74.11,0,0,1,6.14-6.14A8,8,0,0,0,82.89,69L85.4,46.43a91.32,91.32,0,0,1,15-6.23l17.74,14.19a8,8,0,0,0,5.48,1.74,73.93,73.93,0,0,1,8.68,0,8,8,0,0,0,5.48-1.74L155.55,40.2a91.57,91.57,0,0,1,15,6.23L173.11,69a8,8,0,0,0,2.64,5.1,74.11,74.11,0,0,1,6.14,6.14,8,8,0,0,0,5.1,2.64l22.58,2.51a91.32,91.32,0,0,1,6.23,15l-14.19,17.74A8,8,0,0,0,199.87,123.66Z"
-                  ></path>
-                </svg>
-              </div>
-            </button>
-            <div
-              class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
-              style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuClzOUZRTQxVlCSWtUObD6dRPhZUzGPQ2OgKlEMZ68DSAGKUc3wbBdy88vQxG4OwABD0X5QEIVIvpHgSGTB0tVzZBaFs5Kex2hA_NnB_U12AIqC0bXoJhJtRtATkS4ACtAtk4Ey3bZx_que2-8l6dp61I7R19Za1uoJ881N-Sw_LskpsybBkFqnfEpjma4NHQPhfmcUNMFoOeN92r0ve1MlClv49dXT1LvaCgLUSjz-jobrSyC8k2GUbzmwoC9jtTCwIoVHHoxlE5g");'
-            ></div>
-          </div>
-        </header>
-        <div class="px-40 flex flex-1 justify-center py-5">
-          <div class="layout-content-container flex flex-col w-[512px] max-w-[512px] py-5 max-w-[960px] flex-1">
-            <div class="flex flex-wrap justify-between gap-3 p-4"><p class="text-[#181113] tracking-light text-[32px] font-bold leading-tight min-w-72">Settings</p></div>
-            <h3 class="text-[#181113] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">Pet</h3>
-            <div class="flex items-center gap-4 bg-white px-4 min-h-[72px] py-2 justify-between">
-              <div class="flex flex-col justify-center">
-                <p class="text-[#181113] text-base font-medium leading-normal line-clamp-1">Pet Name</p>
-                <p class="text-[#88636f] text-sm font-normal leading-normal line-clamp-2">Change your pet's name</p>
-              </div>
-              <div class="shrink-0"><button class="text-base font-medium leading-normal">Edit</button></div>
-            </div>
-            <div class="flex items-center gap-4 bg-white px-4 min-h-[72px] py-2 justify-between">
-              <div class="flex flex-col justify-center">
-                <p class="text-[#181113] text-base font-medium leading-normal line-clamp-1">Pet Avatar</p>
-                <p class="text-[#88636f] text-sm font-normal leading-normal line-clamp-2">Change your pet's appearance</p>
-              </div>
-              <div class="shrink-0"><button class="text-base font-medium leading-normal">Edit</button></div>
-            </div>
-            <h3 class="text-[#181113] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">Notifications</h3>
-            <div class="flex items-center gap-4 bg-white px-4 min-h-[72px] py-2 justify-between">
-              <div class="flex flex-col justify-center">
-                <p class="text-[#181113] text-base font-medium leading-normal line-clamp-1">Daily Reminder</p>
-                <p class="text-[#88636f] text-sm font-normal leading-normal line-clamp-2">Set a daily reminder to check in with your pet</p>
-              </div>
-              <div class="shrink-0">
-                <label
-                  class="relative flex h-[31px] w-[51px] cursor-pointer items-center rounded-full border-none bg-[#f4f0f2] p-0.5 has-[:checked]:justify-end has-[:checked]:bg-[#ea477d]"
-                >
-                  <div class="h-full w-[27px] rounded-full bg-white" style="box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 8px, rgba(0, 0, 0, 0.06) 0px 3px 1px;"></div>
-                  <input type="checkbox" class="invisible absolute" />
-                </label>
-              </div>
-            </div>
-            <h3 class="text-[#181113] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">Appearance</h3>
-            <div class="flex items-center gap-4 bg-white px-4 min-h-[72px] py-2 justify-between">
-              <div class="flex flex-col justify-center">
-                <p class="text-[#181113] text-base font-medium leading-normal line-clamp-1">Language</p>
-                <p class="text-[#88636f] text-sm font-normal leading-normal line-clamp-2">Choose your preferred language</p>
-              </div>
-              <div class="shrink-0"><button class="text-base font-medium leading-normal">English</button></div>
-            </div>
-            <div class="flex items-center gap-4 bg-white px-4 min-h-[72px] py-2 justify-between">
-              <div class="flex flex-col justify-center">
-                <p class="text-[#181113] text-base font-medium leading-normal line-clamp-1">Theme</p>
-                <p class="text-[#88636f] text-sm font-normal leading-normal line-clamp-2">Switch between light and dark mode</p>
-              </div>
-              <div class="shrink-0"><button class="text-base font-medium leading-normal">Light</button></div>
-            </div>
-            <h3 class="text-[#181113] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">Account</h3>
-            <div class="flex items-center gap-4 bg-white px-4 min-h-[72px] py-2 justify-between">
-              <div class="flex flex-col justify-center">
-                <p class="text-[#181113] text-base font-medium leading-normal line-clamp-1">Email</p>
-                <p class="text-[#88636f] text-sm font-normal leading-normal line-clamp-2">Update your email address</p>
-              </div>
-              <div class="shrink-0"><button class="text-base font-medium leading-normal">Edit</button></div>
-            </div>
-            <div class="flex items-center gap-4 bg-white px-4 min-h-[72px] py-2 justify-between">
-              <div class="flex flex-col justify-center">
-                <p class="text-[#181113] text-base font-medium leading-normal line-clamp-1">Password</p>
-                <p class="text-[#88636f] text-sm font-normal leading-normal line-clamp-2">Change your password</p>
-              </div>
-              <div class="shrink-0"><button class="text-base font-medium leading-normal">Edit</button></div>
-            </div>
-            <div class="flex items-center gap-4 bg-white px-4 min-h-14 justify-between">
-              <p class="text-[#181113] text-base font-normal leading-normal flex-1 truncate">Delete Account</p>
-              <div class="shrink-0">
-                <div class="text-[#181113] flex size-7 items-center justify-center" data-icon="ArrowRight" data-size="24px" data-weight="regular">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                    <path
-                      d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"
-                    ></path>
-                  </svg>
-                </div>
-              </div>
-            </div>
-          </div>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Stitch Design — HabitPet (Settings)</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries">
+    <div id="profileModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+      <div class="bg-white rounded-2xl shadow-lg w-96 p-6">
+        <h2 class="text-xl font-semibold mb-4">Profile Information</h2>
+        <p><strong>Name:</strong> <span id="userName">Gauri Bagad</span></p>
+        <p><strong>Pet Name:</strong> <span id="petName">Tommy</span></p>
+        <p><strong>Email:</strong> <span id="userEmail">gauri@example.com</span></p>
+        <div class="mt-4 flex justify-end">
+          <button onclick="closeModal('profileModal')" class="px-4 py-2 bg-red-500 text-white rounded">Close</button>
         </div>
       </div>
     </div>
-  </body>
+  </script>
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+  <link
+    rel="stylesheet"
+    as="style"
+    onload="this.rel='stylesheet'"
+    href="https://fonts.googleapis.com/css2?display=swap&family=Noto+Sans:wght@400;500;700;900&family=Plus+Jakarta+Sans:wght@400;500;700;800"
+  />
+  <style>
+    :root { --bg: #ffffff; --muted:#88636f; --text:#181113; --card:#ffffff; }
+    [data-theme="dark"] { --bg:#ef65d1; --muted:#b3a3ab; --text:#dc50ca; --card:#cb37ab; }
+    body { font-family: "Plus Jakarta Sans","Noto Sans", sans-serif; background:var(--bg); color:var(--text); }
+    .card { background:var(--card); }
+    /* small helper for modal backdrop */
+    .backdrop { background: rgba(248, 88, 216, 0.45); }
+  </style>
+</head>
+<body data-theme="light" class="min-h-screen">
+
+  <div class="relative flex min-h-screen flex-col overflow-x-hidden">
+    <!-- Header -->
+    <header class="flex items-center justify-between border-b px-10 py-3 border-b-[#f4f0f2]">
+      <div class="flex items-center gap-4 text-[#181113]">
+        <div class="w-10 h-10">
+          <!-- keep logo as-is (do not change) -->
+          <svg viewBox="0 0 48 48" class="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_6_543)">
+              <path d="M42.1739 20.1739L27.8261..." fill="currentColor"></path>
+            </g>
+            <defs><clipPath id="clip0_6_543"><rect width="48" height="48" fill="white"></rect></clipPath></defs>
+          </svg>
+        </div>
+        <h2 id="appTitle" class="text-lg font-bold leading-tight">HabitPet</h2>
+      </div>
+
+      <div class="flex items-center gap-4">
+  <!-- settings button -->
+ <button 
+  id="settingsGear" 
+  class="rounded-full w-8 h-8 bg-[#f4f0f2] flex items-center justify-center" 
+  title="Settings"
+>
+  <svg xmlns="http://www.w3.org/2000/svg" 
+       class="w-8 h-8" 
+       fill="currentColor" 
+       viewBox="0 0 256 256">
+    <path d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160Zm88-29.84q.06-2.16,0-4.32l14.92-18.64a8,8,0,0,0,1.48-7.06,107.21,107.21,0,0,0-10.88-26.25,8,8,0,0,0-6-3.93l-23.72-2.64q-1.48-1.56-3-3L186,40.54a8,8,0,0,0-3.94-6,107.71,107.71,0,0,0-26.25-10.87,8,8,0,0,0-7.06,1.49L130.16,40Q128,40,125.84,40L107.2,25.11a8,8,0,0,0-7.06-1.48A107.6,107.6,0,0,0,73.89,34.51a8,8,0,0,0-3.93,6L67.32,64.27q-1.56,1.49-3,3L40.54,70a8,8,0,0,0-6,3.94,107.71,107.71,0,0,0-10.87,26.25,8,8,0,0,0,1.49,7.06L40,125.84Q40,128,40,130.16L25.11,148.8a8,8,0,0,0-1.48,7.06,107.21,107.21,0,0,0,10.88,26.25,8,8,0,0,0,6,3.93l23.72,2.64q1.49,1.56,3,3L70,215.46a8,8,0,0,0,3.94,6,107.71,107.71,0,0,0,26.25,10.87,8,8,0,0,0,7.06-1.49L125.84,216q2.16.06,4.32,0l18.64,14.92a8,8,0,0,0,7.06,1.48,107.21,107.21,0,0,0,26.25-10.88,8,8,0,0,0,3.93-6l2.64-23.72q1.56-1.48,3-3L215.46,186a8,8,0,0,0,6-3.94,107.71,107.71,0,0,0,10.87-26.25,8,8,0,0,0-1.49-7.06Z"></path>
+  </svg>
+</button>
+
+
+  <!-- user avatar -->
+  <a href="pg1.html" target="_blank">
+    <div id="userAvatar" 
+         class="rounded-full w-8 h-8 bg-center bg-cover" 
+         style='background-image:url("https://lh3.googleusercontent.com/aida-public/AB6AXuClzOUZRTQxVlCSWtUObD6dRPhZUzGPQ2OgKlEMZ68DSAGKUc3wbBdy88vQxG4OwABD0X5QEIVIvpHgSGTB0tVzZBaFs5Kex2hA_NnB_U12AIqC0bXoJhJtRtATkS4ACtAtk4Ey3bZx_que2-8l6dp61I7R19Za1uoJ881N-Sw_LskpsybBkFqnfEpjma4NHQPhfmcUNMFoOeN92r0ve1MlClv49dXT1LvaCgLUSjz-jobrSyC8k2GUbzmwoC9jtTCwIoVHHoxlE5g");'>
+    </div>
+  </a>
+</div>
+
+
+   </header>
+
+    <!-- Main content -->
+    <main class="px-10 py-6 flex-1 flex justify-center">
+      <div class="w-[640px]">
+        <div class="mb-4"><h1 id="settingsHeading" class="text-3xl font-bold">Settings</h1></div>
+
+        <!-- Pet -->
+        <section class="mb-6">
+          <h3 id="petHeading" class="text-lg font-bold mb-2">Pet</h3>
+
+          <div class="card flex items-center justify-between p-4 rounded-md shadow-sm mb-3">
+            <div>
+              <p id="labelPetName" class="text-base font-medium">Pet Name</p>
+              <p id="descPetName" class="text-sm text-[var(--muted)]">Change your pet's name</p>
+            </div>
+            <div class="flex items-center gap-3">
+              <div id="petNameDisplay" class="text-base font-medium"></div>
+              <button id="editPetNameBtn" class="text-base font-medium">Edit</button>
+            </div>
+          </div>
+
+          <div class="card flex items-center justify-between p-4 rounded-md shadow-sm">
+            <div class="flex items-center gap-3">
+              <div id="petAvatarPreview" class="w-12 h-12 rounded-md bg-[#f4f0f2] bg-center bg-cover"></div>
+              <div>
+                <p id="labelPetAvatar" class="text-base font-medium">Pet Avatar</p>
+                <p id="descPetAvatar" class="text-sm text-[var(--muted)]">Change your pet's appearance</p>
+              </div>
+            </div>
+            <div><button id="editPetAvatarBtn" class="text-base font-medium">Edit</button></div>
+          </div>
+        </section>
+
+        <!-- Notifications -->
+        <section class="mb-6">
+          <h3 id="notifHeading" class="text-lg font-bold mb-2">Notifications</h3>
+          <div class="card flex items-center justify-between p-4 rounded-md shadow-sm">
+            <div>
+              <p id="labelDailyReminder" class="text-base font-medium">Daily Reminder</p>
+              <p id="descDailyReminder" class="text-sm text-[var(--muted)]">Set a daily reminder to check in with your pet</p>
+            </div>
+            <div>
+              <!-- stylish toggle -->
+              <label class="relative inline-flex items-center cursor-pointer">
+                <input id="dailyToggle" type="checkbox" class="sr-only" />
+                <div class="w-12 h-6 bg-[#ef65d1] rounded-full p-0.5 flex items-center" aria-hidden="true">
+                  <div id="toggleKnob" class="w-5 h-5 bg-white rounded-full shadow" style="transition: transform .18s;"></div>
+                </div>
+              </label>
+            </div>
+          </div>
+        </section>
+
+        <!-- Appearance -->
+        <section class="mb-6">
+          <h3 id="appearanceHeading" class="text-lg font-bold mb-2">Appearance</h3>
+
+          <div class="card flex items-center justify-between p-4 rounded-md shadow-sm mb-3">
+            <div>
+              <p id="labelLanguage" class="text-base font-medium">Language</p>
+              <p id="descLanguage" class="text-sm text-[var(--muted)]">Choose your preferred language</p>
+            </div>
+            <div>
+              <select id="languageSelect" class="border rounded px-8 py-2">
+                <option value="en">English</option>
+                <option value="mr">मराठी</option>
+                <option value="hi">हिन्दी</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="card flex items-center justify-between p-4 rounded-md shadow-sm">
+            <div>
+              <p id="labelTheme" class="text-base font-medium">Theme</p>
+              <p id="descTheme" class="text-sm text-[var(--muted)]">Switch between light and dark mode</p>
+            </div>
+            <div>
+              <select id="themeSelect" class="border rounded px-7 py-1">
+                <option value="light">Light</option>
+                <option value="dark">Dark</option>
+              </select>
+            </div>
+          </div>
+        </section>
+
+        <!-- Account -->
+        <section class="mb-6">
+          <h3 id="accountHeading" class="text-lg font-bold mb-2">Account</h3>
+
+          <div class="card flex items-center justify-between p-4 rounded-md shadow-sm mb-3">
+            <div>
+              <p id="labelEmail" class="text-base font-medium">Email</p>
+              <p id="descEmail" class="text-sm text-[var(--muted)]">Update your email address</p>
+            </div>
+            <div><button id="editEmailBtn" class="text-base font-medium">Edit</button></div>
+          </div>
+
+          <div class="card flex items-center justify-between p-4 rounded-md shadow-sm mb-3">
+            <div>
+              <p id="labelPassword" class="text-base font-medium">Password</p>
+              <p id="descPassword" class="text-sm text-[var(--muted)]">Change your password</p>
+            </div>
+            <div><button id="editPasswordBtn" class="text-base font-medium">Edit</button></div>
+          </div>
+
+          <div class="card flex items-center justify-between p-4 rounded-md shadow-sm">
+            <p id="labelDelete" class="text-base">Delete Account</p>
+            <div><button id="deleteAccountBtn" class="text-base font-medium">Delete</button></div>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <!-- Modals (hidden by default) -->
+  <!-- Generic modal backdrop + content -->
+  <div id="modalRoot"></div>
+
+  <template id="modalTpl">
+    <div class="fixed inset-0 z-40 grid place-items-center">
+      <div class="absolute inset-0 backdrop"></div>
+      <div class="bg-white dark:bg-[#071022] rounded-lg shadow-lg w-[92%] max-w-[520px] p-5 z-50 card overflow-auto">
+        <div class="flex justify-between items-start mb-3">
+          <h3 id="modalTitle" class="text-lg font-bold"></h3>
+          <button class="text-sm" data-action="close">Close</button>
+        </div>
+        <div id="modalBody" class="space-y-3 text-[var(--text)]"></div>
+        <div id="modalActions" class="mt-4 flex justify-end gap-2"></div>
+      </div>
+    </div>
+  </template>
+
+  <script>
+    /******************************
+     * Basic state + persistence
+     ******************************/
+    const defaultState = {
+      petName: "Sparky",
+      petAvatar: "", // dataURL or empty (use placeholder)
+      dailyReminder: true,
+      language: "en",
+      theme: "light",
+      account: {
+        email: "user@example.com",
+        passwordSet: true,
+        ownerName: "Owner Name"
+      },
+      deleted: false
+    };
+
+    const LS_KEY = "habitpet_settings_v1";
+    function loadState() {
+      try {
+        const raw = localStorage.getItem(LS_KEY);
+        if (!raw) return {...defaultState};
+        const parsed = JSON.parse(raw);
+        return {...defaultState, ...parsed};
+      } catch(e) { return {...defaultState}; }
+    }
+    function saveState() { localStorage.setItem(LS_KEY, JSON.stringify(state)); }
+
+    let state = loadState();
+
+    /******************************
+     * Utilities: modal
+     ******************************/
+    const modalRoot = document.getElementById("modalRoot");
+    const modalTpl = document.getElementById("modalTpl");
+
+    function openModal({title = "", body = "", actions = []}) {
+      // clone template
+      modalRoot.innerHTML = "";
+      const node = modalTpl.content.cloneNode(true);
+      node.querySelector("#modalTitle").textContent = title;
+      const bodyEl = node.querySelector("#modalBody");
+      if (typeof body === "string") bodyEl.innerHTML = body;
+      else bodyEl.appendChild(body);
+      const actionsEl = node.querySelector("#modalActions");
+      actions.forEach(a => {
+        const btn = document.createElement("button");
+        btn.className = a.class || "px-3 py-1 rounded bg-[#f4f0f2]";
+        btn.textContent = a.label;
+        btn.onclick = () => { if (a.onClick) a.onClick(); if (a.closeOnClick !== false) closeModal(); };
+        actionsEl.appendChild(btn);
+      });
+      const closeBtn = node.querySelector("[data-action='close']");
+      closeBtn.onclick = closeModal;
+      modalRoot.appendChild(node);
+    }
+
+    function closeModal() { modalRoot.innerHTML = ""; }
+
+    /******************************
+     * UI binding + behaviors
+     ******************************/
+    const petNameDisplay = document.getElementById("petNameDisplay");
+    const petAvatarPreview = document.getElementById("petAvatarPreview");
+    const dailyToggle = document.getElementById("dailyToggle");
+    const toggleKnob = document.getElementById("toggleKnob");
+    const languageSelect = document.getElementById("languageSelect");
+    const themeSelect = document.getElementById("themeSelect");
+
+    // labels for translations (only keys used on page)
+    const translations = {
+      en: {
+        "HabitPet":"HabitPet",
+        "Settings":"Settings",
+        "Pet":"Pet",
+        "Pet Name":"Pet Name",
+        "Change your pet's name":"Change your pet's name",
+        "Pet Avatar":"Pet Avatar",
+        "Change your pet's appearance":"Change your pet's appearance",
+        "Notifications":"Notifications",
+        "Daily Reminder":"Daily Reminder",
+        "Set a daily reminder to check in with your pet":"Set a daily reminder to check in with your pet",
+        "Appearance":"Appearance",
+        "Language":"Language",
+        "Choose your preferred language":"Choose your preferred language",
+        "Theme":"Theme",
+        "Switch between light and dark mode":"Switch between light and dark mode",
+        "Account":"Account",
+        "Email":"Email",
+        "Update your email address":"Update your email address",
+        "Password":"Password",
+        "Change your password":"Change your password",
+        "Delete Account":"Delete Account"
+      },
+      mr: {
+        "HabitPet":"हॅबिटपेट",
+        "Settings":"सेटिंग्ज",
+        "Pet":"पाल्याचे प्राणी",
+        "Pet Name":"पाल्याचे नाव",
+        "Change your pet's name":"तुमच्या पाळीव प्राण्याचे नाव बदला",
+        "Pet Avatar":"पाल्याचा अवतार",
+        "Change your pet's appearance":"पाल्याचे रूप बदला",
+        "Notifications":"सूचना",
+        "Daily Reminder":"दैनंदिन स्मरण",
+        "Set a daily reminder to check in with your pet":"दररोज पाळीव प्राण्याची स्थिती तपासण्यासाठी स्मरण सेट करा",
+        "Appearance":"दिखावा",
+        "Language":"भाषा",
+        "Choose your preferred language":"आपली पसंतीची भाषा निवडा",
+        "Theme":"थीम",
+        "Switch between light and dark mode":"लाइट आणि डार्क मोडmधील बदल करा",
+        "Account":"खाता",
+        "Email":"ईमेल",
+        "Update your email address":"आपला ईमेल पत्ता अद्यतनित करा",
+        "Password":"पासवर्ड",
+        "Change your password":"आपला पासवर्ड बदल करा",
+        "Delete Account":"खाते हटवा"
+      },
+      hi: {
+        "HabitPet":"हैबिटपेट",
+        "Settings":"सेटिंग्स",
+        "Pet":"पेट",
+        "Pet Name":"पालतू का नाम",
+        "Change your pet's name":"अपने पालतू का नाम बदलें",
+        "Pet Avatar":"पेट अवतार",
+        "Change your pet's appearance":"अपने पालतू की उपस्थिति बदलें",
+        "Notifications":"सुझनाएँ",
+        "Daily Reminder":"दैनिक अनुस्मारक",
+        "Set a daily reminder to check in with your pet":"अपने पालतू की जाँच के लिए दैनिक अनुस्मारक सेट करें",
+        "Appearance":"दिखावट",
+        "Language":"भाषा",
+        "Choose your preferred language":"अपनी पसंदीदा भाषा चुनें",
+        "Theme":"थीम",
+        "Switch between light and dark mode":"लाइट और डार्क मोड के बीच स्विच करें",
+        "Account":"खाता",
+        "Email":"ईमेल",
+        "Update your email address":"अपना ईमेल पता अपडेट करें",
+        "Password":"पासवर्ड",
+        "Change your password":"अपना पासवर्ड बदलें",
+        "Delete Account":"खाता हटाएं"
+      }
+    };
+
+    function applyTranslations() {
+      const lang = state.language || "en";
+      const map = translations[lang] || translations.en;
+      document.getElementById("appTitle").textContent = map["HabitPet"];
+      document.getElementById("settingsHeading").textContent = map["Settings"];
+      document.getElementById("petHeading").textContent = map["Pet"];
+      document.getElementById("labelPetName").textContent = map["Pet Name"];
+      document.getElementById("descPetName").textContent = map["Change your pet's name"];
+      document.getElementById("labelPetAvatar").textContent = map["Pet Avatar"];
+      document.getElementById("descPetAvatar").textContent = map["Change your pet's appearance"];
+      document.getElementById("notifHeading").textContent = map["Notifications"];
+      document.getElementById("labelDailyReminder").textContent = map["Daily Reminder"];
+      document.getElementById("descDailyReminder").textContent = map["Set a daily reminder to check in with your pet"];
+      document.getElementById("appearanceHeading").textContent = map["Appearance"];
+      document.getElementById("labelLanguage").textContent = map["Language"];
+      document.getElementById("descLanguage").textContent = map["Choose your preferred language"];
+      document.getElementById("labelTheme").textContent = map["Theme"];
+      document.getElementById("descTheme").textContent = map["Switch between light and dark mode"];
+      document.getElementById("accountHeading").textContent = map["Account"];
+      document.getElementById("labelEmail").textContent = map["Email"];
+      document.getElementById("descEmail").textContent = map["Update your email address"];
+      document.getElementById("labelPassword").textContent = map["Password"];
+      document.getElementById("descPassword").textContent = map["Change your password"];
+      document.getElementById("labelDelete").textContent = map["Delete Account"];
+    }
+
+    function render() {
+      // pet name
+      petNameDisplay.textContent = state.petName;
+      // pet avatar preview: use dataURL if present else a placeholder gradient
+      if (state.petAvatar) {
+        petAvatarPreview.style.backgroundImage = `url(${state.petAvatar})`;
+      } else {
+        petAvatarPreview.style.backgroundImage = `linear-gradient(135deg,#fde68a,#fbcfe8)`;
+      }
+
+      // toggle
+      dailyToggle.checked = !!state.dailyReminder;
+      updateToggleVisual();
+
+      // language & theme selects
+      languageSelect.value = state.language || "en";
+      themeSelect.value = state.theme || "light";
+      applyTheme();
+      applyTranslations();
+      // set profile avatar area not to be changed (we keep original) — already set in HTML
+    }
+
+    function updateToggleVisual() {
+      if (dailyToggle.checked) {
+        toggleKnob.style.transform = "translateX(26px)";
+        toggleKnob.parentElement.style.background = "var(--text)";
+      } else {
+        toggleKnob.style.transform = "translateX(0)";
+        toggleKnob.parentElement.style.background = "var(--bg)";
+      }
+    }
+
+    /******************************
+     * event handlers: edits
+     ******************************/
+    document.getElementById("editPetNameBtn").addEventListener("click", () => {
+      const form = document.createElement("div");
+      form.innerHTML = `
+        <label class="block">
+          <div class="text-sm mb-1">New pet name</div>
+          <input id="inpPetName" type="text" class="w-full border rounded p-2" value="${escapeHtml(state.petName)}" />
+        </label>
+      `;
+      openModal({
+        title: "Edit pet name",
+        body: form,
+        actions: [
+          { label: "Cancel", class: "px-3 py-1 rounded", onClick: () => {}, closeOnClick: true },
+          { label: "Save", class: "px-3 py-1 rounded bg-[#ea477d] text-white", onClick: () => {
+              const val = form.querySelector("#inpPetName").value.trim();
+              if (!val) { alert("Name cannot be empty"); return; }
+              state.petName = val;
+              saveState(); render();
+            } }
+        ]
+      });
+    });
+
+    document.getElementById("editPetAvatarBtn").addEventListener("click", () => {
+      const container = document.createElement("div");
+      container.innerHTML = `
+        <div class="space-y-3">
+          <div class="text-sm">Upload an image (png/jpg) or pick a preset:</div>
+          <input id="fileAvatar" type="file" accept="image/*" class="block w-full" />
+          <div class="flex gap-2 mt-2">
+            <div class="w-16 h-16 rounded-md bg-gradient-to-br from-pink-200 to-yellow-200 preset" data-src="preset1"></div>
+            <div class="w-16 h-16 rounded-md bg-gradient-to-br from-purple-200 to-blue-200 preset" data-src="preset2"></div>
+            <div class="w-16 h-16 rounded-md bg-gradient-to-br from-green-200 to-teal-200 preset" data-src="preset3"></div>
+          </div>
+          <div class="pt-2">
+            <div class="text-sm">Preview:</div>
+            <div id="avatarPreviewBox" class="w-32 h-32 rounded-md mt-2 bg-[#f4f0f2] bg-center bg-cover"></div>
+          </div>
+        </div>
+      `;
+      const fileInput = container.querySelector("#fileAvatar");
+      const previewBox = container.querySelector("#avatarPreviewBox");
+      container.querySelectorAll(".preset").forEach(el => {
+        el.style.cursor = "pointer";
+        el.addEventListener("click", () => {
+          // simple CSS preset -> create placeholder dataURL (SVG)
+          const src = el.dataset.src;
+          const svg = `<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'><rect width='100%' height='100%' fill='${src==='preset1'?'#fbcfe8':'#c7bfe6'}'/></svg>`;
+          const data = 'data:image/svg+xml;utf8,' + encodeURIComponent(svg);
+          previewBox.style.backgroundImage = `url(${data})`;
+          previewBox.dataset.chosen = data;
+        });
+      });
+      fileInput.addEventListener("change", (e) => {
+        const f = e.target.files[0];
+        if (!f) return;
+        const allowed = ["image/png","image/jpeg","image/jpg","image/webp"];
+        if (!allowed.includes(f.type)) { alert("Unsupported file type"); return; }
+        const reader = new FileReader();
+        reader.onload = () => {
+          previewBox.style.backgroundImage = `url(${reader.result})`;
+          previewBox.dataset.chosen = reader.result;
+        };
+        reader.readAsDataURL(f);
+      });
+
+      openModal({
+        title: "Edit pet avatar",
+        body: container,
+        actions: [
+          { label: "Cancel", class: "px-3 py-1 rounded" },
+          { label: "Save", class: "px-3 py-1 rounded bg-[#ea477d] text-white", onClick: () => {
+              const chosen = previewBox.dataset.chosen;
+              if (!chosen) { alert("Please pick or upload an image"); return; }
+              state.petAvatar = chosen;
+              saveState(); render();
+            } }
+        ]
+      });
+    });
+
+    // notifications toggle behavior
+    dailyToggle.addEventListener("change", () => {
+      state.dailyReminder = dailyToggle.checked;
+      saveState();
+      updateToggleVisual();
+    });
+
+    // language change
+    languageSelect.addEventListener("change", () => {
+      state.language = languageSelect.value;
+      saveState();
+      applyTranslations();
+    });
+
+    // theme change
+    themeSelect.addEventListener("change", () => {
+      state.theme = themeSelect.value;
+      saveState();
+      applyTheme();
+    });
+
+    function applyTheme() {
+      document.body.setAttribute("data-theme", state.theme || "light");
+      // also set theme select value in case changed programmatically
+      themeSelect.value = state.theme;
+    }
+
+    // email edit
+    document.getElementById("editEmailBtn").addEventListener("click", () => {
+      const form = document.createElement("div");
+      form.innerHTML = `
+        <label class="block">
+          <div class="text-sm mb-1">Old email</div>
+          <input id="oldEmail" type="email" class="w-full border rounded p-2" value="${escapeHtml(state.account.email)}" disabled />
+        </label>
+        <label class="block mt-2">
+          <div class="text-sm mb-1">New email</div>
+          <input id="newEmail" type="email" class="w-full border rounded p-2" placeholder="you@example.com" />
+        </label>
+        <div id="emailErr" class="text-sm text-red-500 mt-1"></div>
+      `;
+      openModal({
+        title: "Edit email",
+        body: form,
+        actions: [
+          { label: "Cancel", class: "px-3 py-1 rounded" },
+          { label: "Save", class: "px-3 py-1 rounded bg-[#ea477d] text-white", onClick: () => {
+            const v = form.querySelector("#newEmail").value.trim();
+            if (!validateEmail(v)) { form.querySelector("#emailErr").textContent = "Please enter a valid email (must contain @)"; return; }
+            state.account.email = v;
+            saveState(); render();
+          } }
+        ]
+      });
+    });
+
+    // password edit
+    document.getElementById("editPasswordBtn").addEventListener("click", () => {
+      const form = document.createElement("div");
+      form.innerHTML = `
+        <label class="block">
+          <div class="text-sm mb-1">Old password</div>
+          <input id="oldPwd" type="password" class="w-full border rounded p-2" placeholder="Old password" />
+        </label>
+        <label class="block mt-2">
+          <div class="text-sm mb-1">New password</div>
+          <input id="newPwd" type="password" class="w-full border rounded p-2" placeholder="Min 6 chars" />
+        </label>
+        <label class="block mt-2">
+          <div class="text-sm mb-1">Confirm new password</div>
+          <input id="confirmPwd" type="password" class="w-full border rounded p-2" />
+        </label>
+        <div id="pwdErr" class="text-sm text-red-500 mt-1"></div>
+      `;
+      openModal({
+        title: "Change password",
+        body: form,
+        actions: [
+          { label: "Cancel", class: "px-3 py-1 rounded" },
+          { label: "Save", class: "px-3 py-1 rounded bg-[#ea477d] text-white", onClick: () => {
+            const oldp = form.querySelector("#oldPwd").value;
+            const np = form.querySelector("#newPwd").value;
+            const cp = form.querySelector("#confirmPwd").value;
+            if (np.length < 6) { form.querySelector("#pwdErr").textContent = "New password must be at least 6 characters"; return; }
+            if (np !== cp) { form.querySelector("#pwdErr").textContent = "Passwords do not match"; return; }
+            // we don't store real password — just mark as set
+            state.account.passwordSet = true;
+            saveState(); render();
+            alert("Password changed");
+          } }
+        ]
+      });
+    });
+
+    // delete account
+    document.getElementById("deleteAccountBtn").addEventListener("click", () => {
+      // show information in modal and ask confirm
+      const info = document.createElement("div");
+      info.innerHTML = `
+        <div class="text-sm">Account info:</div>
+        <div class="mt-2 p-3 border rounded">
+          <div><strong>Owner:</strong> ${escapeHtml(state.account.ownerName)}</div>
+          <div><strong>Email:</strong> ${escapeHtml(state.account.email)}</div>
+          <div><strong>Pet name:</strong> ${escapeHtml(state.petName)}</div>
+        </div>
+        <div class="mt-3 text-sm text-[var(--muted)]">Confirming delete will remove saved settings (localStorage) for this browser.</div>
+      `;
+      openModal({
+        title: "Delete account",
+        body: info,
+        actions: [
+          { label: "Cancel", class: "px-3 py-1 rounded" },
+          { label: "Delete", class: "px-3 py-1 rounded bg-red-600 text-white", onClick: () => {
+            // perform delete
+            localStorage.removeItem(LS_KEY);
+            state = {...defaultState, deleted:true};
+            saveState();
+            render();
+            alert("Account deleted (local data cleared). Page reset.");
+          } }
+        ]
+      });
+    });
+
+    // helper: escape html input for safety in templates
+    function escapeHtml(s) {
+      return (s + "").replace(/[&<>"']/g, (m) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+    }
+
+    function validateEmail(v) {
+      if (!v) return false;
+      // simple check: contains @ and . after @
+      const at = v.indexOf("@");
+      if (at < 1) return false;
+      const dot = v.indexOf(".", at+2);
+      return dot > at+1;
+    }
+
+    /******************************
+     * initial setup
+     ******************************/
+    // Set initial pet avatar preview from stored state
+    if (!state.petAvatar) {
+      // create gentle placeholder
+      const svg = `<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'><rect width='100%' height='100%' fill='#fde68a'/></svg>`;
+      state.petAvatar = ""; // leave empty so we use gradient preview
+    }
+
+    // wire default values
+    document.getElementById("settingsGear").addEventListener("click", () => alert("You are already on settings page"));
+
+    // init language & theme
+    if (!state.language) state.language = "en";
+    if (!state.theme) state.theme = "light";
+
+    // render UI for first time
+    render();
+
+    // small safety: close modal when clicking backdrop
+    modalRoot.addEventListener("click", (e) => {
+      if (e.target === modalRoot) closeModal();
+    });
+
+    // allow pressing Escape to close modal
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeModal();
+    });
+
+    // ensure toggle visual matches on load
+    updateToggleVisual();
+
+    // END
+  </script>
+</body>
 </html>
