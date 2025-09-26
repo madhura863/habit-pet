@@ -45,20 +45,24 @@
             <h2 class="text-[#181113] tracking-light text-[28px] font-bold leading-tight px-4 text-center pb-3 pt-5">Welcome back</h2>
             <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
               <label class="flex flex-col min-w-40 flex-1">
+               
                 <input
-                  placeholder="Email"
-                  class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#181113] focus:outline-0 focus:ring-0 border-none bg-[#f4f0f2] focus:border-none h-14 placeholder:text-[#89616f] p-4 text-base font-normal leading-normal"
-                  value=""
-                />
+  id="email"
+  type="email"
+  placeholder="Email"
+  class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#181113] focus:outline-0 focus:ring-0 border-none bg-[#f4f0f2] focus:border-none h-14 placeholder:text-[#89616f] p-4 text-base font-normal leading-normal"
+/>
               </label>
             </div>
             <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
               <label class="flex flex-col min-w-40 flex-1">
+              
                 <input
-                  placeholder="Password"
-                  class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#181113] focus:outline-0 focus:ring-0 border-none bg-[#f4f0f2] focus:border-none h-14 placeholder:text-[#89616f] p-4 text-base font-normal leading-normal"
-                  value=""
-                />
+  id="password"
+  type="password"
+  placeholder="Password"
+  class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#181113] focus:outline-0 focus:ring-0 border-none bg-[#f4f0f2] focus:border-none h-14 placeholder:text-[#89616f] p-4 text-base font-normal leading-normal"
+/>
               </label>
             </div>
             <div class="flex px-4 py-3">
@@ -103,39 +107,34 @@
         </div>
       </div>
     </div>
-    <script>
-  // Redirect to registration page if user clicks "Sign up"
-  document.getElementById("signup-btn").addEventListener("click", function (event) {
-    event.preventDefault();
-    window.location.href = "login.html"; // registration page
-  });
-
-  document.getElementById("header-signup-btn").addEventListener("click", function (event) {
-    event.preventDefault();
-    window.location.href = "login.html"; // registration page
-  });
-
-  // Handle login verification
+   <script>
   document.getElementById("login-btn").addEventListener("click", function (event) {
     event.preventDefault();
+const email = document.getElementById("email").value;
+const password = document.getElementById("password").value;
 
-    // Grab the entered values
-    const email = document.querySelector("input[placeholder='Email']").value;
-    const password = document.querySelector("input[placeholder='Password']").value;
 
-    // Fetch stored values from localStorage
-    const storedEmail = localStorage.getItem("userEmail");
-    const storedPassword = localStorage.getItem("userPassword");
+    // ✅ Send login request to backend
+    fetch("http://localhost:5000/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email, password }),
+    })
+      .then(res => res.json())
+      .then(data => {
+        alert(data.message);
 
-    // Compare
-    if (email === storedEmail && password === storedPassword) {
-      alert("Login successful!");
-      window.location.href = "dashboard.html"; // go to dashboard
-    } else {
-      alert("Invalid email or password!");
-    }
+        if (data.message.includes("successful")) {
+          window.location.href = "dashboard.html"; // redirect after login
+        }
+      })
+      .catch(err => {
+        console.error("Error:", err);
+        alert("Something went wrong!");
+      });
   });
 </script>
+
 
 
 </div>

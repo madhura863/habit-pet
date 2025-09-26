@@ -3,16 +3,18 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
+  "description": "HabitPet is a web application designed to help you build and maintain positive habits through gamification. A dynamic progress bar on your dashboard updates in real-time, allowing you to visually track your success and stay motivated. Watch your virtual pet evolve as a reflection of your consistent progress.",
   "dependencies": {
+    "bcrypt": "^6.0.0",
     "body-parser": "^2.2.0",
     "cors": "^2.8.5",
     "express": "^5.1.0",
-    "mysql2": "^3.14.4"
+    "mysql2": "^3.15.0"
   }
 }
